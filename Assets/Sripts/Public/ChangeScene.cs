@@ -22,6 +22,7 @@ public class ChangeScene : MonoBehaviour
     private void Start()
     {
         BackGroundPannel.localScale = new Vector3(0, 1, 1);
+        BackGroundPannel.gameObject.SetActive(true);
         AddChangeSceneEvent();
     }
 
@@ -40,7 +41,7 @@ public class ChangeScene : MonoBehaviour
         var seq = DOTween.Sequence();
 
         seq.Append(BackGroundPannel.DOScale(1f, 1f));
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneName);
     }
 }
