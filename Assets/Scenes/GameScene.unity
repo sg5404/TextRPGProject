@@ -447,7 +447,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1006,11 +1006,17 @@ MonoBehaviour:
     \uBCBD\uC744 \uC9DA\uACE0 \uC77C\uC5B4\uC11C\uC790 \uC0AD\uB9C9\uD55C \uAC10\uC625\uC758\n\uBAA8\uC2B5\uC774
     \uBCF4\uC778\uB2E4."
   TestImage: {fileID: 21300000, guid: 3f01bbabb95c4984fba2f9d9cf440d92, type: 3}
+  TestString:
+  - "\uC2E0\uBE44\uB85C\uC6B4 \uD798\uC774 \uBAB8\uC5D0 \uAE43\uB4E0\uB2E4."
+  - 
   SummaryText: {fileID: 208069986}
   SummaryImage: {fileID: 611779265}
   SelectButtons:
   - {fileID: 1653550591}
   - {fileID: 321431841}
+  SelectButtons_Texts:
+  - {fileID: 2019214107}
+  - {fileID: 868735799}
   printingTime: 0.05
 --- !u!1 &586601635
 GameObject:
@@ -2949,7 +2955,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
