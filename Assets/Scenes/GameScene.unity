@@ -242,6 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153838381}
+  - component: {fileID: 153838382}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -264,6 +265,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &153838382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153838380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04feccf2aa03064fb28edeedf7f736d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActNum: 0
+  StageNum: 0
+  StageList:
+  - {fileID: 11400000, guid: 82b929409accede4cb820a7f879deadf, type: 2}
 --- !u!1 &208069984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,15 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dd3e24679332e4899b05ccd9ce86ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestText: "<\uC9C0\uD558 \uAC10\uC625>\n\n    \uB2F9\uC2E0\uC740 \uC9C0\uD558\uAC10\uC625\uC758
-    \uD55C \uBC29\uC5D0\uC11C \uB208\uC744 \uB5B3\uB2E4.\n\uAE30\uC5B5\uC744 \uB354\uB4EC\uC5B4\uBD10\uB3C4
-    \uC790\uC2E0\uC774 \uC65C \uC774\uACF3\uC5D0 \uC788\uB294\uC9C0\n\uBAA8\uB974\uACA0\uB2E4.
-    \uBCBD\uC744 \uC9DA\uACE0 \uC77C\uC5B4\uC11C\uC790 \uC0AD\uB9C9\uD55C \uAC10\uC625\uC758\n\uBAA8\uC2B5\uC774
-    \uBCF4\uC778\uB2E4."
-  TestImage: {fileID: 21300000, guid: 3f01bbabb95c4984fba2f9d9cf440d92, type: 3}
-  TestString:
-  - "\uC2E0\uBE44\uB85C\uC6B4 \uD798\uC774 \uBAB8\uC5D0 \uAE43\uB4E0\uB2E4."
-  - 
   SummaryText: {fileID: 208069986}
   SummaryImage: {fileID: 611779265}
   SelectButtons:
