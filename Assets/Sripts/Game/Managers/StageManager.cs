@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class StageManager : MonoSingleton<StageManager>
 {
     [SerializeField] private int ActNum = 0;
     [SerializeField] private int StageNum = 0;
@@ -14,7 +14,15 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         ActAndStageInit();
-        var C_Stage = StageList[0];
+        var C_Stage = StageList[StageNum];
+        PrintManager.Instance.SetStage(C_Stage.StageSummary, C_Stage.StageSprite, C_Stage.OptionCount, C_Stage.Options);
+        UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage));
+    }
+
+    public void NextStage()
+    {
+        ++StageNum;
+        var C_Stage = StageList[StageNum];
         PrintManager.Instance.SetStage(C_Stage.StageSummary, C_Stage.StageSprite, C_Stage.OptionCount, C_Stage.Options);
         UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage));
     }
