@@ -17,6 +17,7 @@ public class OptionTextAndKind
 {
     public string OptionText;
     public EventKinds EventKind;
+    public Events LinkedEvent; 
 }
 
 public enum EventKinds
