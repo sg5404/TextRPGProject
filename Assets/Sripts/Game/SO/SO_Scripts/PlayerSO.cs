@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerSO : ScriptableObject
 {
     public string Name;
+    public string Summary;
     [SerializeField] private int MaxHP;
     [SerializeField] private int CurrentHP;
     [SerializeField] private int DEF;
