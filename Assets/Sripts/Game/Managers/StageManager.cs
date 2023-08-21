@@ -14,17 +14,16 @@ public class StageManager : MonoSingleton<StageManager>
     private void Start()
     {
         ActAndStageInit();
-        var C_Stage = StageList[StageNum];
+        var C_Stage = StageList[StageNum++];
         PrintManager.Instance.SetStage(C_Stage.StageSummary, C_Stage.StageSprite, C_Stage.OptionCount, C_Stage.Options);
-        UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage));
+        UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage), StageNum);
     }
 
     public void NextStage()
     {
-        ++StageNum;
-        var C_Stage = StageList[StageNum];
+        var C_Stage = StageList[StageNum++];
         PrintManager.Instance.SetStage(C_Stage.StageSummary, C_Stage.StageSprite, C_Stage.OptionCount, C_Stage.Options);
-        UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage));
+        UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage), StageNum);
     }
 
     void ActAndStageInit()
@@ -34,7 +33,7 @@ public class StageManager : MonoSingleton<StageManager>
 
     List<Events> SelectEvent(StageSO stage)
     {
-        List<Events> Events_ = new List<Events>();
+        List<Events> Events_ = new List<Events>();              
 
         for (int i = 0; i < 2; i++)
         {
@@ -44,6 +43,7 @@ public class StageManager : MonoSingleton<StageManager>
             {
                 EventKinds.None => null,
                 EventKinds.Reward => _Events[0],
+                EventKinds.Battle => _Events[1],
                 _ => _Events[0],
             };
 
