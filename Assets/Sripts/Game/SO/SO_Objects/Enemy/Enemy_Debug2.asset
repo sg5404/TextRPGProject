@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf9a69555ee1a643b333b1b5f256813, type: 3}
   m_Name: Enemy_Debug2
   m_EditorClassIdentifier: 
-  Name: Debug_1
+  Name: Debug_2
+  Summary: "\uB514\uBC84\uADF8 \uC6A9\uC73C\uB85C \uB9CC\uB4E0 \uC801"
   MaxHP: 1
   CurrentHP: 1
   DEF: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Enemy_Debug
   m_EditorClassIdentifier: 
   Name: Debug_1
+  Summary: "\uB514\uBC84\uADF8 \uC6A9\uC73C\uB85C \uB9CC\uB4E0 \uC801"
   MaxHP: 1
   CurrentHP: 1
   DEF: 1

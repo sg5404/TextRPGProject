@@ -14,6 +14,7 @@ public class PlayerSO : ScriptableObject
     [SerializeField] private int CRI_DMG;
     [SerializeField] private int AVOID_PER;
     [SerializeField] private int HIT_RATE;
+    public List<Skill> Skills;
 
     public int _MaxHP => MaxHP;
     public int _CurrentHP => CurrentHP;
@@ -45,4 +46,13 @@ public class Stat
     public int CRI_DMG;
     public int AVOID_PER;
     public int HIT_RATE;
+}
+
+[System.Serializable]
+public class Skill
+{
+    public string SkillName; //스킬 이름
+    public string SkillSummary; //스킬 설명
+    public int SkillDamagePercent; //공격력 계수
+    public int SkillAttackAcount; //공격 횟수
 }
