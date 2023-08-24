@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StageManager : MonoSingleton<StageManager>
 {
+    [SerializeField] private PlayerSO Player;
+
     [SerializeField] private int ActNum = 0;
     [SerializeField] private int StageNum = 0;
 
@@ -29,6 +31,7 @@ public class StageManager : MonoSingleton<StageManager>
     void ActAndStageInit()
     {
         ActNum = StageNum = 0;
+        Player.FullHeal();
     }
 
     List<Events> SelectEvent(StageSO stage)
