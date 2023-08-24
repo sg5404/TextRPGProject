@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf9a69555ee1a643b333b1b5f256813, type: 3}
+  m_Name: Enemy_HeadlessPrisoner
+  m_EditorClassIdentifier: 
+  Name: "\uBAA9 \uC5C6\uB294 \uC8C4\uC218"
+  Summary: "\uB450\uBC88\uC9F8 \uC804\uD22C\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uBAAC\uC2A4\uD130"
+  MaxHP: 175
+  CurrentHP: 175
+  DEF: 5
+  CRI_PER: 0
+  CRI_DMG: 25
+  AVOID_PER: 0
+  HIT_RATE: 85
