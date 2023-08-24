@@ -17,6 +17,12 @@ public class UIManager : MonoSingleton<UIManager>
 
     [SerializeField] private List<Button> RewardButtons;
 
+    [SerializeField] private List<StatSO> Stats;
+    [SerializeField] private List<StatSO> WeaponStats;
+    private bool isFirstReward = true;
+    private List<int> CurrentStats = new List<int>();
+    private List<int> CurrentWeaponStats = new List<int>();
+
     private int nowStage = 0;
 
     public void SetButtonEvent(List<Events> events, int StageNum)
@@ -34,6 +40,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void RewardPannelSetActive(bool isActive)
     {
+        if(isFirstReward) SetRewardButton(WeaponStats, CurrentWeaponStats);
+        else SetRewardButton(Stats, CurrentStats);
         BackgroundPannel.gameObject.SetActive(isActive);
         RewardPannel.gameObject.SetActive(isActive);    
     }
@@ -45,12 +53,32 @@ public class UIManager : MonoSingleton<UIManager>
         BattleManager.Instance.BattleSet(nowStage - 1);
     }
 
+    public void SetRewardButton(List<StatSO> _stats, List<int> _currentStats)
+    {
+        if(_currentStats.Count == _stats.Count - 3) 
+        {
+            Debug.LogError("더 이상 스탯 설정 불가");
+            return;
+        }
+
+        for(int i = 0; i < RewardButtons.Count; i++)
+        {
+            int statIndex = Random.Range(0, _stats.Count - 1);
+            while(_currentStats.Contains(statIndex))
+            {
+               statIndex = Random.Range(0, _stats.Count - 1);
+            }                        
+            RewardButtons[i]?.GetComponent<RewardButtonSetting>().Setting(_stats[statIndex].Name,_stats[statIndex].Summary, _stats[statIndex].StatImage);
+            _currentStats.Add(statIndex);
+        }
+    }
+
     public void RewardButtonClick(int num)
     {
         //받아온 num 으로 몇번째에 들어가 있는 강화를 선택할지 고를 수 있음
         //디버그용
         Debug.Log(num);
-
+        
         RewardPannelSetActive(false);
 
         //다음스테이지로 넘어가기

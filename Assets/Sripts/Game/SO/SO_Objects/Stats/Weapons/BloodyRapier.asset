@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b30d63a8b47d264ca7d63a8a1a59880, type: 3}
+  m_Name: BloodyRapier
+  m_EditorClassIdentifier: 
+  Name: "\uD53C\uBB3B\uC740 \uB808\uC774\uD53C\uC5B4"
+  Summary: "\uC9C4\uD64D\uBE5B \uD53C\uAC00 \uBB34\uAE30\uB97C \uB4A4\uB36E\uACE0
+    \uC788\uB2E4. <br> \uACF5\uACA9\uB825 +8 <br> \uCE58\uBA85\uD0C0\uC728 +30% "
+  StatImage: {fileID: 0}
+  HP: 0
+  DMG: 10
+  DEF: 0
+  CRI_PER: 30
+  CRI_DMG: 0
+  AVOID_PER: 0
+  HIT_RATE: 0

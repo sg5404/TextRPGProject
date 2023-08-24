@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 87063809}
   - component: {fileID: 87063808}
   - component: {fileID: 87063811}
+  - component: {fileID: 87063812}
   m_Layer: 5
   m_Name: SelectButton1
   m_TagString: Untagged
@@ -472,6 +473,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonNum: 0
+--- !u!114 &87063812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87063806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b88ea61514f7704ebbc743487fe8534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: {fileID: 1995684567}
+  Summary: {fileID: 1838581945}
+  StatImage: {fileID: 296483698}
 --- !u!1 &119712684
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +501,7 @@ GameObject:
   - component: {fileID: 119712687}
   - component: {fileID: 119712686}
   - component: {fileID: 119712689}
+  - component: {fileID: 119712690}
   m_Layer: 5
   m_Name: SelectButton2
   m_TagString: Untagged
@@ -610,6 +627,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonNum: 1
+--- !u!114 &119712690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119712684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b88ea61514f7704ebbc743487fe8534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: {fileID: 1496743188}
+  Summary: {fileID: 583186127}
+  StatImage: {fileID: 682374954}
 --- !u!1 &130605135
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +679,20 @@ MonoBehaviour:
   SelectButtons:
   - {fileID: 1653550591}
   - {fileID: 321431841}
-  RewardButtons: []
+  RewardButtons:
+  - {fileID: 87063808}
+  - {fileID: 119712686}
+  - {fileID: 397991778}
+  Stats:
+  - {fileID: 11400000, guid: f7307bfcf54cc0647b71df5e0236f0a9, type: 2}
+  - {fileID: 11400000, guid: 11580e1df63e7f24792a5b8444f8a96b, type: 2}
+  - {fileID: 11400000, guid: 88420fbd5a2a92a41824c51af642dea6, type: 2}
+  - {fileID: 11400000, guid: f092ef4cf718be244b3c0ab9cda7549b, type: 2}
+  WeaponStats:
+  - {fileID: 11400000, guid: 39735fc0098379642a2ded788081ebf7, type: 2}
+  - {fileID: 11400000, guid: 253a268ef6e96c046ba0c0ef6a6da74b, type: 2}
+  - {fileID: 11400000, guid: 788fbaa70f5ed444bb0ded1bb05696a1, type: 2}
+  - {fileID: 11400000, guid: b13aed0067b0ae947be2b6a50c100847, type: 2}
 --- !u!4 &130605137
 Transform:
   m_ObjectHideFlags: 0
@@ -1857,6 +1902,7 @@ GameObject:
   - component: {fileID: 397991779}
   - component: {fileID: 397991778}
   - component: {fileID: 397991781}
+  - component: {fileID: 397991782}
   m_Layer: 5
   m_Name: SelectButton3
   m_TagString: Untagged
@@ -1981,7 +2027,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec2114e129730a4eb25f8d8b2e8f804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNum: 3
+  ButtonNum: 2
+--- !u!114 &397991782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397991776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b88ea61514f7704ebbc743487fe8534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: {fileID: 1408029824}
+  Summary: {fileID: 2126042097}
+  StatImage: {fileID: 824002055}
 --- !u!1 &399491767
 GameObject:
   m_ObjectHideFlags: 0
@@ -9535,7 +9596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2133805593
 RectTransform:
   m_ObjectHideFlags: 0

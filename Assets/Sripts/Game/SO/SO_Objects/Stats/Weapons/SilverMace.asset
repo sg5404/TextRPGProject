@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b30d63a8b47d264ca7d63a8a1a59880, type: 3}
+  m_Name: SilverMace
+  m_EditorClassIdentifier: 
+  Name: "\uC740\uBE5B \uCCA0\uD1F4"
+  Summary: "\uC740\uC740\uD558\uAC8C \uBE5B\uB098\uB294 \uBB35\uC9C1\uD55C \uCCA0\uD1F4\uC774\uB2E4.
+    <br> \uACF5\uACA9\uB825 +10 <br> \uBC29\uC5B4\uB825 +10"
+  StatImage: {fileID: 0}
+  HP: 0
+  DMG: 10
+  DEF: 10
+  CRI_PER: 0
+  CRI_DMG: 0
+  AVOID_PER: 0
+  HIT_RATE: 0
