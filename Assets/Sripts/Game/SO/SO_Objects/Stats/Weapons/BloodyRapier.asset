@@ -16,7 +16,7 @@ MonoBehaviour:
   Summary: "\uACF5\uACA9\uB825 +8 <br> \uCE58\uBA85\uD0C0\uC728 +30% "
   StatImage: {fileID: 0}
   HP: 0
-  DMG: 10
+  ATK: 8
   DEF: 0
   CRI_PER: 30
   CRI_DMG: 0

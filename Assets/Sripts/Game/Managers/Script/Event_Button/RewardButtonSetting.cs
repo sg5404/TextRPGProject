@@ -21,6 +21,7 @@ public class RewardButtonSetting : MonoBehaviour
 
         rewardStat.HP = _statSO._HP;
         rewardStat.DEF = _statSO._DEF;
+        rewardStat.ATK = _statSO._ATK;
         rewardStat.CRI_PER = _statSO._CRI_PER;
         rewardStat.CRI_DMG = _statSO._CRI_DMG;
         rewardStat.AVOID_PER = _statSO._AVOID_PER;
