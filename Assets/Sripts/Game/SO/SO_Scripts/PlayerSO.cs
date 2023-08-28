@@ -9,6 +9,7 @@ public class PlayerSO : ScriptableObject
     public string Summary;
     [SerializeField] private int MaxHP;
     [SerializeField] private int CurrentHP;
+    [SerializeField] private int ATK;
     [SerializeField] private int DEF;
     [SerializeField] private int CRI_PER;
     [SerializeField] private int CRI_DMG;
@@ -18,6 +19,7 @@ public class PlayerSO : ScriptableObject
 
     public int _MaxHP => MaxHP;
     public int _CurrentHP => CurrentHP;
+    public int _ATK => ATK;
     public int _DEF => DEF;
     public int _CRI_PER => CRI_PER;
     public int _CRI_DMG => CRI_DMG;
@@ -28,11 +30,22 @@ public class PlayerSO : ScriptableObject
     {
         MaxHP += stat.HP;
         CurrentHP += stat.HP;
+        ATK += stat.ATK;
         DEF += stat.DEF;
         CRI_PER += stat.CRI_PER;
         CRI_DMG += stat.CRI_DMG;
         AVOID_PER += stat.AVOID_PER;
         HIT_RATE += stat.HIT_RATE;
+    }
+
+    public void Hit(int DMG)
+    {
+        CurrentHP -= DMG;
+    }
+
+    public void FullHeal()
+    {
+        CurrentHP = MaxHP;
     }
 }
 
@@ -52,7 +65,15 @@ public class Stat
 public class Skill
 {
     public string SkillName; //스킬 이름
+    public SkillType S_Type;
+    public Sprite SkillImage;
     public string SkillSummary; //스킬 설명
     public int SkillDamagePercent; //공격력 계수
     public int SkillAttackAcount; //공격 횟수
+}
+
+public enum SkillType
+{
+    Attack,
+    Shield,
 }
