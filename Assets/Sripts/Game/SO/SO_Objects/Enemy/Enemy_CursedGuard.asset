@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: "\uC548\uAC1C\uC5D0 \uC7A0\uC2DD\uB41C \uAD50\uB3C4\uAD00"
   Summary: "\uB9E8 \uCC98\uC74C \uC804\uD22C\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uBAAC\uC2A4\uD130"
   MaxHP: 125
-  CurrentHP: 125
-  ATK: 10
+  CurrentHP: 55
+  ATK: 7
   DEF: 0
   CRI_PER: 0
   CRI_DMG: 10

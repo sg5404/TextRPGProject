@@ -1004,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04feccf2aa03064fb28edeedf7f736d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 11400000, guid: 607eba04084499540afe1fda1c725761, type: 2}
   ActNum: 0
   StageNum: 0
   StageList:

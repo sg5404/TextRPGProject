@@ -231,14 +231,14 @@ public class BattleManager : MonoSingleton<BattleManager>
             EnemyText1.text = $"적의 {EnemySkillName}에 {RealDamage} 피해를 입었다.";
             TextDown();
 
-            Hit(PSO, RealDamage);
-
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
 
             var EnemyText2 = Instantiate(TextPrefab);
             EnemyText2.transform.SetParent(BattleContent);
             EnemyText2.text = $"({DecreaseDamage}감소됨) ({DefenseDamage}방어됨)";
             TextDown();
+
+            Hit(PSO, RealDamage);
 
             yield return new WaitForSeconds(0.5f);
             TextDown();
