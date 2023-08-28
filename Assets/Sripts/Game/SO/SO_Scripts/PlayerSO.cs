@@ -24,7 +24,7 @@ public class PlayerSO : ScriptableObject
     public int _AVOID_PER => AVOID_PER;
     public int _HIT_RATE => HIT_RATE;
 
-    void AddStats(Stat stat)
+    public void AddStats(Stat stat)
     {
         MaxHP += stat.HP;
         CurrentHP += stat.HP;

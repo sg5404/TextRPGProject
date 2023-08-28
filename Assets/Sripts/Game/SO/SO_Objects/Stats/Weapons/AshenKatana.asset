@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: AshenKatana
   m_EditorClassIdentifier: 
   Name: "\uC7BF\uBE5B\uC11C\uB9B0 \uCE74\uD0C0\uB098"
-  Summary: "\uC7BF\uBE5B \uD68C\uC0C9\uC744 \uB744\uB294 \uB0A0\uCE74\uB85C\uC6B4
-    \uCE74\uD0C0\uB098\uC774\uB2E4. <br> \uACF5\uACA9\uB825 +8 <br> \uACF5\uACA9
-    \uC801\uC911\uB960 +25%"
+  Summary: "\uACF5\uACA9\uB825 +8 <br> \uACF5\uACA9 \uC801\uC911\uB960 +25%"
   StatImage: {fileID: 0}
   HP: 0
   DMG: 10

@@ -17,6 +17,7 @@ public class UIManager : MonoSingleton<UIManager>
 
     [SerializeField] private List<Button> RewardButtons;
 
+    [SerializeField] private PlayerSO playerSO;
     [SerializeField] private List<StatSO> Stats;
     [SerializeField] private List<StatSO> WeaponStats;
     private bool isFirstReward = true;
@@ -40,10 +41,12 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void RewardPannelSetActive(bool isActive)
     {
-        if(isFirstReward) SetRewardButton(WeaponStats, CurrentWeaponStats);
-        else SetRewardButton(Stats, CurrentStats);
         BackgroundPannel.gameObject.SetActive(isActive);
         RewardPannel.gameObject.SetActive(isActive);    
+
+        if(!isActive) return;
+        if(isFirstReward) SetRewardButton(WeaponStats, CurrentWeaponStats);
+        else SetRewardButton(Stats, CurrentStats);
     }
 
     public void BattlePannelSetActive(bool isActive)
@@ -66,11 +69,13 @@ public class UIManager : MonoSingleton<UIManager>
             int statIndex = Random.Range(0, _stats.Count - 1);
             while(_currentStats.Contains(statIndex))
             {
+               if(_currentStats.Count == _stats.Count) break;
                statIndex = Random.Range(0, _stats.Count - 1);
             }                        
-            RewardButtons[i]?.GetComponent<RewardButtonSetting>().Setting(_stats[statIndex].Name,_stats[statIndex].Summary, _stats[statIndex].StatImage);
+            RewardButtons[i]?.GetComponent<RewardButtonSetting>().Setting(_stats[statIndex]);
             _currentStats.Add(statIndex);
         }
+        isFirstReward = false;
     }
 
     public void RewardButtonClick(int num)
@@ -78,9 +83,8 @@ public class UIManager : MonoSingleton<UIManager>
         //받아온 num 으로 몇번째에 들어가 있는 강화를 선택할지 고를 수 있음
         //디버그용
         Debug.Log(num);
-        
         RewardPannelSetActive(false);
-
+        playerSO.AddStats(RewardButtons[num]?.GetComponent<RewardButtonSetting>().RewardStat);
         //다음스테이지로 넘어가기
         StageManager.Instance.NextStage();
     }

@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: RustedSteelSword
   m_EditorClassIdentifier: 
   Name: "\uB179\uC2A8 \uAC15\uCCA0\uC591\uC190\uAC80"
-  Summary: "\uBB34\uAC81\uACE0, \uB179\uC774 \uC2AC\uC5B4\uC788\uB294 \uAC15\uCCA0
-    \uC591\uC190\uAC80\uC774\uB2E4. <br> \uACF5\uACA9\uB825 +15"
+  Summary: "\uACF5\uACA9\uB825 +15"
   StatImage: {fileID: 0}
   HP: 0
   DMG: 15
