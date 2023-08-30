@@ -60,11 +60,11 @@ public class BattleManager : MonoSingleton<BattleManager>
     /// </summary>
     void UpdateHP()
     {
-        Player_HP.fillAmount = (float)PSO._CurrentHP / (float)PSO._MaxHP;
-        Player_HP_Text.text = $"{PSO._CurrentHP}/{PSO._MaxHP}";
+        Player_HP.fillAmount = (float)PSO._CurrentHP / (float)PSO._CurrentMaxHP;
+        Player_HP_Text.text = $"{PSO._CurrentHP}/{PSO._CurrentMaxHP}";
 
-        Enemy_HP.fillAmount = (float)EnemySOs[NowStage]._CurrentHP / (float)EnemySOs[NowStage]._MaxHP;
-        Enemy_HP_Text.text = $"{EnemySOs[NowStage]._CurrentHP}/{EnemySOs[NowStage]._MaxHP}";
+        Enemy_HP.fillAmount = (float)EnemySOs[NowStage]._CurrentHP / (float)EnemySOs[NowStage]._CurrentMaxHP;
+        Enemy_HP_Text.text = $"{EnemySOs[NowStage]._CurrentHP}/{EnemySOs[NowStage]._CurrentMaxHP}";
     }
 
     void UpdateSkill()
@@ -141,7 +141,7 @@ public class BattleManager : MonoSingleton<BattleManager>
         TextDown();
 
         EnemyDamage = 0;
-        EnemyDamage = (EnemySkills[SkillNum].SkillDamagePercent * EnemySOs[NowStage]._ATK) / 100;
+        EnemyDamage = (EnemySkills[SkillNum].SkillDamagePercent * EnemySOs[NowStage]._CurrentATK) / 100;
         EnemySkillName = EnemySkills[SkillNum].SkillName;
         EnemyAttackAmount = EnemySkills[SkillNum].SkillAttackAcount;
 
@@ -177,7 +177,7 @@ public class BattleManager : MonoSingleton<BattleManager>
         PlayerDamage = 0;
         PlayerShield = 0;
 
-        if (PlayerSkills[SkillNum].S_Type == SkillType.Attack) PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._ATK) / 100;
+        if (PlayerSkills[SkillNum].S_Type == SkillType.Attack) PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
         else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._DEF) / 100;
 
         isPlayerAction = false;

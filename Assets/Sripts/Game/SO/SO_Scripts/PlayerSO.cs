@@ -8,8 +8,10 @@ public class PlayerSO : ScriptableObject
     public string Name;
     public string Summary;
     [SerializeField] private int MaxHP;
+    [SerializeField] private int CurrentMaxHP;
     [SerializeField] private int CurrentHP;
     [SerializeField] private int ATK;
+    [SerializeField] private int CurrentATK;
     [SerializeField] private int DEF;
     [SerializeField] private int CRI_PER;
     [SerializeField] private int CRI_DMG;
@@ -18,8 +20,10 @@ public class PlayerSO : ScriptableObject
     public List<Skill> Skills;
 
     public int _MaxHP => MaxHP;
+    public int _CurrentMaxHP => CurrentMaxHP;
     public int _CurrentHP => CurrentHP;
     public int _ATK => ATK;
+    public int _CurrentATK => CurrentATK;
     public int _DEF => DEF;
     public int _CRI_PER => CRI_PER;
     public int _CRI_DMG => CRI_DMG;
@@ -28,7 +32,7 @@ public class PlayerSO : ScriptableObject
 
     public void AddStats(Stat stat)
     {
-        MaxHP += stat.HP;
+        CurrentMaxHP += stat.HP;
         CurrentHP += stat.HP;
         ATK += stat.ATK;
         DEF += stat.DEF;
@@ -45,7 +49,7 @@ public class PlayerSO : ScriptableObject
 
     public void FullHeal()
     {
-        CurrentHP = MaxHP;
+        CurrentHP = CurrentMaxHP;
     }
 }
 
