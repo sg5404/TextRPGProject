@@ -13,10 +13,16 @@ public class PlayerSO : ScriptableObject
     [SerializeField] private int ATK;
     [SerializeField] private int CurrentATK;
     [SerializeField] private int DEF;
+    [SerializeField] private int CurrentDEF;
     [SerializeField] private int CRI_PER;
+    [SerializeField] private int CurrentCRI_PER;
     [SerializeField] private int CRI_DMG;
+    [SerializeField] private int CurrentCRI_DMG;
     [SerializeField] private int AVOID_PER;
+    [SerializeField] private int CurrentAVOID_PER;
     [SerializeField] private int HIT_RATE;
+    [SerializeField] private int CurrentHIT_RATE;
+
     public List<Skill> Skills;
 
     public int _MaxHP => MaxHP;
@@ -25,21 +31,38 @@ public class PlayerSO : ScriptableObject
     public int _ATK => ATK;
     public int _CurrentATK => CurrentATK;
     public int _DEF => DEF;
+    public int _CurrentDef => CurrentDEF;
     public int _CRI_PER => CRI_PER;
+    public int _CurrentCRI_PER => CurrentCRI_PER;
     public int _CRI_DMG => CRI_DMG;
+    public int _CurrentCRI_DMG => _CurrentCRI_DMG;
     public int _AVOID_PER => AVOID_PER;
+    public int _CurrentAVOID_PER => CurrentAVOID_PER;
     public int _HIT_RATE => HIT_RATE;
+    public int _CurrentHIT_RATE => CurrentHIT_RATE;
 
     public void AddStats(Stat stat)
     {
         CurrentMaxHP += stat.HP;
         CurrentHP += stat.HP;
-        ATK += stat.ATK;
-        DEF += stat.DEF;
-        CRI_PER += stat.CRI_PER;
-        CRI_DMG += stat.CRI_DMG;
-        AVOID_PER += stat.AVOID_PER;
-        HIT_RATE += stat.HIT_RATE;
+        CurrentATK += stat.ATK;
+        CurrentDEF += stat.DEF;
+        CurrentCRI_PER += stat.CRI_PER;
+        CurrentCRI_DMG += stat.CRI_DMG;
+        CurrentAVOID_PER += stat.AVOID_PER;
+        CurrentHIT_RATE += stat.HIT_RATE;
+    }
+
+    public void FirstInit()
+    {
+        CurrentMaxHP = MaxHP;
+        CurrentHP = CurrentMaxHP;
+        CurrentATK = ATK;
+        CurrentDEF = DEF;
+        CurrentCRI_PER = CRI_PER;
+        CurrentCRI_DMG = CRI_DMG;
+        CurrentAVOID_PER = AVOID_PER;
+        CurrentHIT_RATE = HIT_RATE;
     }
 
     public void Hit(int DMG)
