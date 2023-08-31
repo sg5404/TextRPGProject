@@ -15,10 +15,12 @@ MonoBehaviour:
   Name: "\uCE74\uC640\uC774 \uC815\uD6C8\uC9F1"
   Summary: "\uAC9C\uB9C8\uACE0 \uD559\uC0DD\uC774\uB2E4."
   MaxHP: 100
-  CurrentHP: 80
+  CurrentMaxHP: 100
+  CurrentHP: 95
   ATK: 10
+  CurrentATK: 10
   DEF: 5
-  CRI_PER: 10
+  CRI_PER: 25
   CRI_DMG: 50
   AVOID_PER: 5
   HIT_RATE: 100
