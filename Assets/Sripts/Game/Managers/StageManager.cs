@@ -13,6 +13,8 @@ public class StageManager : MonoSingleton<StageManager>
 
     [SerializeField] private List<Events> _Events;
 
+    [SerializeField] private List<StageSO> RandomStages;
+
     private void Start()
     {
         ActAndStageInit();
@@ -24,8 +26,19 @@ public class StageManager : MonoSingleton<StageManager>
     public void NextStage()
     {
         var C_Stage = StageList[StageNum++];
-        PrintManager.Instance.SetStage(C_Stage.StageSummary, C_Stage.StageSprite, C_Stage.OptionCount, C_Stage.Options);
-        UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage), StageNum);
+        Debug.Log(C_Stage.isRandomStage);
+        if(!C_Stage.isRandomStage)
+        {
+            PrintManager.Instance.SetStage(C_Stage.StageSummary, C_Stage.StageSprite, C_Stage.OptionCount, C_Stage.Options);
+            UIManager.Instance.SetButtonEvent(SelectEvent(C_Stage), StageNum);
+        }
+        else
+        {
+            var randomStage = RandomStages[Random.Range(0,RandomStages.Count)];
+            if(randomStage == null) return;
+            PrintManager.Instance.SetStage(randomStage.StageSummary, randomStage.StageSprite, randomStage.OptionCount, randomStage.Options);
+            UIManager.Instance.SetButtonEvent(SelectEvent(randomStage), StageNum);
+        }
     }
 
     void ActAndStageInit()
@@ -47,6 +60,7 @@ public class StageManager : MonoSingleton<StageManager>
                 EventKinds.None => null,
                 EventKinds.Reward => _Events[0],
                 EventKinds.Battle => _Events[1],
+                EventKinds.Random => RandomEvents(),
                 _ => _Events[0],
             };
 
@@ -56,5 +70,16 @@ public class StageManager : MonoSingleton<StageManager>
         }
 
         return Events_;
+    }
+
+    Events RandomEvents()
+    {
+        int index = Random.Range(0,2);
+        if(_Events[index] == null)
+        {
+            Debug.LogError("Event not Available");
+            return null;
+        }
+        return _Events[index];
     }
 }

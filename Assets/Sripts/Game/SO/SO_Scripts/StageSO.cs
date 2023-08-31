@@ -10,6 +10,7 @@ public class StageSO : ScriptableObject
     public string StageSummary;
     public int OptionCount;
     public List<OptionTextAndKind> Options;
+    public bool isRandomStage;
 }
 
 [System.Serializable]
@@ -26,4 +27,5 @@ public enum EventKinds
     Battle,
     Reward,
     Reward_First,
+    Random,
 }
