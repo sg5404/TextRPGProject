@@ -31,7 +31,7 @@ public class StageManager : MonoSingleton<StageManager>
     void ActAndStageInit()
     {
         ActNum = StageNum = 0;
-        Player.FullHeal();
+        Player.FirstInit();
     }
 
     List<Events> SelectEvent(StageSO stage)
