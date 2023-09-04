@@ -1054,14 +1054,13 @@ MonoBehaviour:
   ActNum: 0
   StageNum: 0
   StageList:
-  - {fileID: 11400000, guid: e8de878b2b758a74fa24dfe93f2f0c01, type: 2}
+  - {fileID: 11400000, guid: 82b929409accede4cb820a7f879deadf, type: 2}
   - {fileID: 11400000, guid: 0454875908eb4064d98e08719d3068f2, type: 2}
+  - {fileID: 11400000, guid: e8de878b2b758a74fa24dfe93f2f0c01, type: 2}
   _Events:
   - {fileID: 738487626433675035, guid: f14a0a84252543a4baad0f95308dc561, type: 3}
   - {fileID: 522146170132029504, guid: fddfc3da2058b9346b47f4efbce66b00, type: 3}
-  RandomStages:
-  - {fileID: 11400000, guid: 9773f64ad8b61744a856423ce9c26e45, type: 2}
-  - {fileID: 11400000, guid: 61b0f391581b0404b9b8d94a6d3b1a98, type: 2}
+  RandomStages: []
 --- !u!1 &186559058
 GameObject:
   m_ObjectHideFlags: 0

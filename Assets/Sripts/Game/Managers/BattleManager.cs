@@ -18,6 +18,7 @@ public class BattleManager : MonoSingleton<BattleManager>
 
     private bool isPlayerAction = false;
     private bool isTurnStart = false;
+    private bool IsCriticaled = false;
 
     private List<Skill> EnemySkills = new List<Skill>();
     private List<Skill> PlayerSkills = new List<Skill>();
@@ -46,7 +47,7 @@ public class BattleManager : MonoSingleton<BattleManager>
         //적과 플레이어의 이름 바꿔주기
         PlayerNameText.text = PSO.Name;
         EnemyNameText.text = EnemySOs[NowStage].Name;
-        EnemySOs[NowStage].FullHeal();
+        EnemySOs[NowStage].FirstInit();
         //적의 HP와 플레이어의 HP표시
         UpdateHP();
         UpdateSkill();
@@ -161,6 +162,7 @@ public class BattleManager : MonoSingleton<BattleManager>
         TextDown();
     }
 
+    //여기에 치명타 판정해야할듯?
     public void PlayerAction(int SkillNum)
     {
         for(int num = 0; num < Player_Skill_Button.Count; num++)
@@ -177,8 +179,18 @@ public class BattleManager : MonoSingleton<BattleManager>
         PlayerDamage = 0;
         PlayerShield = 0;
 
-        if (PlayerSkills[SkillNum].S_Type == SkillType.Attack) PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
-        else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._DEF) / 100;
+        if (PlayerSkills[SkillNum].S_Type == SkillType.Attack)
+        {
+            PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
+            float temp = 0;
+            if (IsCritical(PSO._CurrentCRI_PER))
+            {
+                temp = (float)PlayerDamage + (float)PlayerDamage * (float)PSO._CurrentCRI_DMG / 100f;
+                PlayerDamage = (int)temp;
+                IsCriticaled = true;
+            }
+        }
+        else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
 
         isPlayerAction = false;
     }
@@ -195,12 +207,18 @@ public class BattleManager : MonoSingleton<BattleManager>
         yield return new WaitForSeconds(0.5f);
         if (PlayerDamage > 0)
         {
-            RealDamage = PlayerDamage - EnemySOs[NowStage]._DEF;
+            RealDamage = PlayerDamage - EnemySOs[NowStage]._CurrentDEF;
             RealDamage = Mathf.Clamp(RealDamage, 0, 1000);
 
             var ResultText = Instantiate(TextPrefab);
             ResultText.transform.SetParent(BattleContent);
-            ResultText.text = $"공격으로 {RealDamage} 피해를 입혔다.";
+            ResultText.text = "";
+            if(IsCriticaled)
+            {
+                IsCriticaled = false;
+                ResultText.text += "치명타! ";
+            }
+            ResultText.text += $"공격으로 {RealDamage} 피해를 입혔다.";
             TextDown();
             TextDown();
 
@@ -219,11 +237,11 @@ public class BattleManager : MonoSingleton<BattleManager>
 
         for (int num = 0; num < EnemyAttackAmount; num++)
         {
-            DecreaseDamage = Min(EnemyDamage, PSO._DEF);
-            DefenseDamage = Min(PlayerShield, (EnemyDamage - PSO._DEF));
+            DecreaseDamage = Min(EnemyDamage, PSO._CurrentDEF);
+            DefenseDamage = Min(PlayerShield, (EnemyDamage - PSO._CurrentDEF));
             DefenseDamage = Mathf.Clamp(DefenseDamage, 0, 1000);
-            RealDamage = EnemyDamage - PSO._DEF - PlayerShield;
-            PlayerShield -= (EnemyDamage - PSO._DEF);
+            RealDamage = EnemyDamage - PSO._CurrentDEF - PlayerShield;
+            PlayerShield -= (EnemyDamage - PSO._CurrentDEF);
             RealDamage = Mathf.Clamp(RealDamage, 0, 1000);
 
             var EnemyText1 = Instantiate(TextPrefab);
@@ -261,5 +279,11 @@ public class BattleManager : MonoSingleton<BattleManager>
     void TextDown()
     {
         BattleContent.position = new Vector3(BattleContent.position.x, BattleContent.position.y + 70f, BattleContent.position.z);
+    }
+
+    bool IsCritical(int CRI_PER)
+    {
+        int Rnum = Random.Range(0, 100);
+        return Rnum < CRI_PER ? true : false;
     }
 }

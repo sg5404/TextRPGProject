@@ -18,7 +18,7 @@ public class StatSO : ScriptableObject
     [SerializeField] private int HIT_RATE;
 
     public int _HP => HP;
-    public int _DMG => ATK;
+    public int _ATK => ATK;
     public int _DEF => DEF;
     public int _CRI_PER => CRI_PER;
     public int _CRI_DMG => CRI_DMG;
