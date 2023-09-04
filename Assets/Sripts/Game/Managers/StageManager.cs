@@ -14,6 +14,7 @@ public class StageManager : MonoSingleton<StageManager>
     [SerializeField] private List<Events> _Events;
 
     [SerializeField] private List<StageSO> RandomStages;
+    private List<StageSO> usedRandomStages = new List<StageSO>();
 
     private void Start()
     {
@@ -34,7 +35,15 @@ public class StageManager : MonoSingleton<StageManager>
         }
         else
         {
-            var randomStage = RandomStages[Random.Range(0,RandomStages.Count)];
+            int index = Random.Range(0, RandomStages.Count - 1);
+            while(usedRandomStages.Contains(RandomStages[index]))
+            {
+                Debug.Log("while");
+               if(usedRandomStages.Count == RandomStages.Count - 1) break;
+               index = Random.Range(0, RandomStages.Count - 1);
+            }
+            usedRandomStages.Add(RandomStages[index]);     
+            var randomStage = RandomStages[index];
             if(randomStage == null) return;
             PrintManager.Instance.SetStage(randomStage.StageSummary, randomStage.StageSprite, randomStage.OptionCount, randomStage.Options);
             UIManager.Instance.SetButtonEvent(SelectEvent(randomStage), StageNum);
@@ -75,6 +84,8 @@ public class StageManager : MonoSingleton<StageManager>
     Events RandomEvents()
     {
         int index = Random.Range(0,2);
+
+
         if(_Events[index] == null)
         {
             Debug.LogError("Event not Available");
