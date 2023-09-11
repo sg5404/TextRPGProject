@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -57,7 +58,7 @@ public class BattleManager : MonoSingleton<BattleManager>
     }
 
     /// <summary>
-    /// 변경된 플레이어와 적의 hp를 어데이트 해주는 함수
+    /// 변경된 플레이어와 적의 hp를 업데이트 해주는 함수
     /// </summary>
     void UpdateHP()
     {
@@ -162,10 +163,46 @@ public class BattleManager : MonoSingleton<BattleManager>
         TextDown();
     }
 
-    //여기에 치명타 판정해야할듯?
+    ////여기에 치명타 판정해야할듯?
+    //public void PlayerAction(int SkillNum)
+    //{
+    //    for(int num = 0; num < Player_Skill_Button.Count; num++)
+    //    {
+    //        Player_Skill_Button[num].interactable = false;
+    //    }
+
+    //    var ActionText = Instantiate(TextPrefab);
+    //    ActionText.transform.SetParent(BattleContent);
+    //    ActionText.text = $"당신은 {PlayerSkills[SkillNum].SkillName}을 사용했다.";
+    //    TextDown();
+    //    TextDown();
+
+    //    PlayerDamage = 0;
+    //    PlayerShield = 0;
+
+    //    if (PlayerSkills[SkillNum].S_Type == SkillType.Attack)
+    //    {
+    //        PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
+    //        float temp = 0;
+    //        if (IsCritical(PSO._CurrentCRI_PER))
+    //        {
+    //            temp = (float)PlayerDamage + (float)PlayerDamage * (float)PSO._CurrentCRI_DMG / 100f;
+    //            PlayerDamage = (int)temp;
+    //            IsCriticaled = true;
+    //        }
+    //    }
+    //    else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
+
+    //    isPlayerAction = false;
+    //}
+
+    /// <summary>
+    /// 플레이어가 조작하는 행동들을 실행하는 함수
+    /// </summary>
+    /// <param name="SkillNum"></param>
     public void PlayerAction(int SkillNum)
     {
-        for(int num = 0; num < Player_Skill_Button.Count; num++)
+        for (int num = 0; num < Player_Skill_Button.Count; num++)
         {
             Player_Skill_Button[num].interactable = false;
         }
@@ -176,23 +213,54 @@ public class BattleManager : MonoSingleton<BattleManager>
         TextDown();
         TextDown();
 
-        PlayerDamage = 0;
-        PlayerShield = 0;
+        BattleInit();
 
-        if (PlayerSkills[SkillNum].S_Type == SkillType.Attack)
+        UnityAction Action = PlayerSkills[SkillNum].S_Type switch
         {
-            PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
-            float temp = 0;
-            if (IsCritical(PSO._CurrentCRI_PER))
-            {
-                temp = (float)PlayerDamage + (float)PlayerDamage * (float)PSO._CurrentCRI_DMG / 100f;
-                PlayerDamage = (int)temp;
-                IsCriticaled = true;
-            }
-        }
-        else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
+            SkillType.Attack => () => Attack(SkillNum),
+            SkillType.Shield => () => Shield(SkillNum),
+            _ => () => Attack(SkillNum),
+        };
+        Action();
+
+        //else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
 
         isPlayerAction = false;
+    }
+
+    void BattleInit()
+    {
+        PlayerDamage = 0;
+        PlayerShield = 0;
+    }
+
+    /// <summary>
+    /// 플레이어가 공격을 사용했을때 발동해주는 함수
+    /// </summary>
+    void Attack(int SkillNum)
+    {
+        float temp = 0;
+        //기본 데미지 저장
+        PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
+        Debug.Log(PlayerDamage);
+
+        //크리티컬 판정
+        if (IsCritical(PSO._CurrentCRI_PER))
+        {
+            temp = (float)PlayerDamage + (float)PlayerDamage * (float)PSO._CurrentCRI_DMG / 100f;
+            PlayerDamage = (int)temp;
+            IsCriticaled = true;
+        }
+    }
+
+    /// <summary>
+    /// 플레이어가 쉴드를 사용했을때 발동해주는 함수
+    /// </summary>
+    /// <param name="SkillNum"></param>
+    void Shield(int SkillNum)
+    {
+        //쉴드량 저장
+        PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
     }
 
     IEnumerator DamageCalculatel()
@@ -216,7 +284,7 @@ public class BattleManager : MonoSingleton<BattleManager>
             if(IsCriticaled)
             {
                 IsCriticaled = false;
-                ResultText.text += "치명타! ";
+                ResultText.text += "치명타! "; 
             }
             ResultText.text += $"공격으로 {RealDamage} 피해를 입혔다.";
             TextDown();
