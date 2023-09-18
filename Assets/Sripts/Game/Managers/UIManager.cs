@@ -20,7 +20,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private PlayerSO playerSO;
     [SerializeField] private List<StatSO> Stats;
     [SerializeField] private List<StatSO> WeaponStats;
-    private bool isFirstReward = true;
+    [SerializeField] private bool isFirstReward = true;
     private List<int> CurrentStats = new List<int>();
     private List<int> CurrentWeaponStats = new List<int>();
 
