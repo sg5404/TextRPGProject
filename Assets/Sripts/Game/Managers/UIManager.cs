@@ -87,5 +87,11 @@ public class UIManager : MonoSingleton<UIManager>
         playerSO.AddStats(RewardButtons[num]?.GetComponent<RewardButtonSetting>().RewardStat);
         //다음스테이지로 넘어가기
         StageManager.Instance.NextStage();
+        FirstReward();
+    }
+
+    public void FirstReward()
+    {
+        isFirstReward = false;
     }
 }
