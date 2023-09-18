@@ -20,7 +20,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private PlayerSO playerSO;
     [SerializeField] private List<StatSO> Stats;
     [SerializeField] private List<StatSO> WeaponStats;
-    private bool isFirstReward = true;
+    [SerializeField] private bool isFirstReward = true;
     private List<int> CurrentStats = new List<int>();
     private List<int> CurrentWeaponStats = new List<int>();
 
@@ -58,7 +58,7 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void SetRewardButton(List<StatSO> _stats, List<int> _currentStats)
     {
-        if(_currentStats.Count == _stats.Count - 3) 
+        if(_currentStats.Count >= _stats.Count - 3) 
         {
             Debug.LogError("더 이상 스탯 설정 불가");
             return;
@@ -69,7 +69,7 @@ public class UIManager : MonoSingleton<UIManager>
             int statIndex = Random.Range(0, _stats.Count - 1);
             while(_currentStats.Contains(statIndex))
             {
-               if(_currentStats.Count == _stats.Count) break;
+               if(_currentStats.Count == _stats.Count - 1) break;
                statIndex = Random.Range(0, _stats.Count - 1);
             }                        
             RewardButtons[i]?.GetComponent<RewardButtonSetting>().Setting(_stats[statIndex]);
