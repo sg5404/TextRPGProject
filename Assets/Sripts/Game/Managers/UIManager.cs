@@ -53,7 +53,7 @@ public class UIManager : MonoSingleton<UIManager>
     {
         BackgroundPannel.gameObject.SetActive(isActive);
         BattlePannel.gameObject.SetActive(isActive);
-        BattleManager.Instance.BattleSet(nowStage - 1);
+        UpgradeBattleManager.Instance.BattleSet(nowStage - 1);
     }
 
     public void SetRewardButton(List<StatSO> _stats, List<int> _currentStats)

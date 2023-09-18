@@ -8,6 +8,10 @@ public class SkillHolder : MonoBehaviour
 
     public void Clicked()
     {
-        BattleManager.Instance.PlayerAction(ButtonNum);
+        if(ButtonNum == 0)
+        {
+            UpgradeBattleManager.Instance.PartAttackPannelSetActive(true);
+        }
+        else UpgradeBattleManager.Instance.PlayerAction(ButtonNum);
     }
 }

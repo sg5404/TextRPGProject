@@ -31,11 +31,11 @@ public class PlayerSO : ScriptableObject
     public int _ATK => ATK;
     public int _CurrentATK => CurrentATK;
     public int _DEF => DEF;
-    public int _CurrentDef => CurrentDEF;
+    public int _CurrentDEF => CurrentDEF;
     public int _CRI_PER => CRI_PER;
     public int _CurrentCRI_PER => CurrentCRI_PER;
     public int _CRI_DMG => CRI_DMG;
-    public int _CurrentCRI_DMG => _CurrentCRI_DMG;
+    public int _CurrentCRI_DMG => CurrentCRI_DMG;
     public int _AVOID_PER => AVOID_PER;
     public int _CurrentAVOID_PER => CurrentAVOID_PER;
     public int _HIT_RATE => HIT_RATE;
@@ -79,13 +79,13 @@ public class PlayerSO : ScriptableObject
 [System.Serializable]
 public class Stat
 {
-    public int HP;
-    public int ATK;
-    public int DEF;
-    public int CRI_PER;
-    public int CRI_DMG;
-    public int AVOID_PER;
-    public int HIT_RATE;
+    public int HP = 0;
+    public int ATK = 0;
+    public int DEF = 0;
+    public int CRI_PER = 0;
+    public int CRI_DMG = 0;
+    public int AVOID_PER = 0;
+    public int HIT_RATE = 0;
 }
 
 [System.Serializable]

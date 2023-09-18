@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -18,6 +19,7 @@ public class BattleManager : MonoSingleton<BattleManager>
 
     private bool isPlayerAction = false;
     private bool isTurnStart = false;
+    private bool IsCriticaled = false;
 
     private List<Skill> EnemySkills = new List<Skill>();
     private List<Skill> PlayerSkills = new List<Skill>();
@@ -46,7 +48,7 @@ public class BattleManager : MonoSingleton<BattleManager>
         //적과 플레이어의 이름 바꿔주기
         PlayerNameText.text = PSO.Name;
         EnemyNameText.text = EnemySOs[NowStage].Name;
-        EnemySOs[NowStage].FullHeal();
+        EnemySOs[NowStage].FirstInit();
         //적의 HP와 플레이어의 HP표시
         UpdateHP();
         UpdateSkill();
@@ -56,7 +58,7 @@ public class BattleManager : MonoSingleton<BattleManager>
     }
 
     /// <summary>
-    /// 변경된 플레이어와 적의 hp를 어데이트 해주는 함수
+    /// 변경된 플레이어와 적의 hp를 업데이트 해주는 함수
     /// </summary>
     void UpdateHP()
     {
@@ -161,9 +163,46 @@ public class BattleManager : MonoSingleton<BattleManager>
         TextDown();
     }
 
+    ////여기에 치명타 판정해야할듯?
+    //public void PlayerAction(int SkillNum)
+    //{
+    //    for(int num = 0; num < Player_Skill_Button.Count; num++)
+    //    {
+    //        Player_Skill_Button[num].interactable = false;
+    //    }
+
+    //    var ActionText = Instantiate(TextPrefab);
+    //    ActionText.transform.SetParent(BattleContent);
+    //    ActionText.text = $"당신은 {PlayerSkills[SkillNum].SkillName}을 사용했다.";
+    //    TextDown();
+    //    TextDown();
+
+    //    PlayerDamage = 0;
+    //    PlayerShield = 0;
+
+    //    if (PlayerSkills[SkillNum].S_Type == SkillType.Attack)
+    //    {
+    //        PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
+    //        float temp = 0;
+    //        if (IsCritical(PSO._CurrentCRI_PER))
+    //        {
+    //            temp = (float)PlayerDamage + (float)PlayerDamage * (float)PSO._CurrentCRI_DMG / 100f;
+    //            PlayerDamage = (int)temp;
+    //            IsCriticaled = true;
+    //        }
+    //    }
+    //    else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
+
+    //    isPlayerAction = false;
+    //}
+
+    /// <summary>
+    /// 플레이어가 조작하는 행동들을 실행하는 함수
+    /// </summary>
+    /// <param name="SkillNum"></param>
     public void PlayerAction(int SkillNum)
     {
-        for(int num = 0; num < Player_Skill_Button.Count; num++)
+        for (int num = 0; num < Player_Skill_Button.Count; num++)
         {
             Player_Skill_Button[num].interactable = false;
         }
@@ -174,13 +213,54 @@ public class BattleManager : MonoSingleton<BattleManager>
         TextDown();
         TextDown();
 
-        PlayerDamage = 0;
-        PlayerShield = 0;
+        BattleInit();
 
-        if (PlayerSkills[SkillNum].S_Type == SkillType.Attack) PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
-        else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._DEF) / 100;
+        UnityAction Action = PlayerSkills[SkillNum].S_Type switch
+        {
+            SkillType.Attack => () => Attack(SkillNum),
+            SkillType.Shield => () => Shield(SkillNum),
+            _ => () => Attack(SkillNum),
+        };
+        Action();
+
+        //else PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
 
         isPlayerAction = false;
+    }
+
+    void BattleInit()
+    {
+        PlayerDamage = 0;
+        PlayerShield = 0;
+    }
+
+    /// <summary>
+    /// 플레이어가 공격을 사용했을때 발동해주는 함수
+    /// </summary>
+    void Attack(int SkillNum)
+    {
+        float temp = 0;
+        //기본 데미지 저장
+        PlayerDamage = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentATK) / 100;
+        Debug.Log(PlayerDamage);
+
+        //크리티컬 판정
+        if (IsCritical(PSO._CurrentCRI_PER))
+        {
+            temp = (float)PlayerDamage + (float)PlayerDamage * (float)PSO._CurrentCRI_DMG / 100f;
+            PlayerDamage = (int)temp;
+            IsCriticaled = true;
+        }
+    }
+
+    /// <summary>
+    /// 플레이어가 쉴드를 사용했을때 발동해주는 함수
+    /// </summary>
+    /// <param name="SkillNum"></param>
+    void Shield(int SkillNum)
+    {
+        //쉴드량 저장
+        PlayerShield = (PlayerSkills[SkillNum].SkillDamagePercent * PSO._CurrentDEF) / 100;
     }
 
     IEnumerator DamageCalculatel()
@@ -195,12 +275,18 @@ public class BattleManager : MonoSingleton<BattleManager>
         yield return new WaitForSeconds(0.5f);
         if (PlayerDamage > 0)
         {
-            RealDamage = PlayerDamage - EnemySOs[NowStage]._DEF;
+            RealDamage = PlayerDamage - EnemySOs[NowStage]._CurrentDEF;
             RealDamage = Mathf.Clamp(RealDamage, 0, 1000);
 
             var ResultText = Instantiate(TextPrefab);
             ResultText.transform.SetParent(BattleContent);
-            ResultText.text = $"공격으로 {RealDamage} 피해를 입혔다.";
+            ResultText.text = "";
+            if(IsCriticaled)
+            {
+                IsCriticaled = false;
+                ResultText.text += "치명타! "; 
+            }
+            ResultText.text += $"공격으로 {RealDamage} 피해를 입혔다.";
             TextDown();
             TextDown();
 
@@ -219,11 +305,11 @@ public class BattleManager : MonoSingleton<BattleManager>
 
         for (int num = 0; num < EnemyAttackAmount; num++)
         {
-            DecreaseDamage = Min(EnemyDamage, PSO._DEF);
-            DefenseDamage = Min(PlayerShield, (EnemyDamage - PSO._DEF));
+            DecreaseDamage = Min(EnemyDamage, PSO._CurrentDEF);
+            DefenseDamage = Min(PlayerShield, (EnemyDamage - PSO._CurrentDEF));
             DefenseDamage = Mathf.Clamp(DefenseDamage, 0, 1000);
-            RealDamage = EnemyDamage - PSO._DEF - PlayerShield;
-            PlayerShield -= (EnemyDamage - PSO._DEF);
+            RealDamage = EnemyDamage - PSO._CurrentDEF - PlayerShield;
+            PlayerShield -= (EnemyDamage - PSO._CurrentDEF);
             RealDamage = Mathf.Clamp(RealDamage, 0, 1000);
 
             var EnemyText1 = Instantiate(TextPrefab);
@@ -261,5 +347,11 @@ public class BattleManager : MonoSingleton<BattleManager>
     void TextDown()
     {
         BattleContent.position = new Vector3(BattleContent.position.x, BattleContent.position.y + 70f, BattleContent.position.z);
+    }
+
+    bool IsCritical(int CRI_PER)
+    {
+        int Rnum = Random.Range(0, 100);
+        return Rnum < CRI_PER ? true : false;
     }
 }
