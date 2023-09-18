@@ -74,6 +74,15 @@ public class PlayerSO : ScriptableObject
     {
         CurrentHP = CurrentMaxHP;
     }
+
+    public bool IsDie()
+    {
+        if(CurrentHP <= 0)
+        {
+            return true;
+        }
+        return false;
+    }
 }
 
 [System.Serializable]

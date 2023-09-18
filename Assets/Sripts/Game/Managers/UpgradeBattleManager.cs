@@ -49,6 +49,8 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     [SerializeField] Transform PartBackGroundPannel;
     [SerializeField] private PartKind PART;
 
+    private List<Transform> Texts = new List<Transform>();
+
     //머리 상태이상
     bool isFaint = false;
     bool isBlind = false;
@@ -159,6 +161,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             Text.text = $"{EnemySOs[NowStage].Name}는 출혈 상태이상에 걸려있다.";
             TextDown();
             StartCoroutine(TextDown_());
+            Texts.Add(Text.transform);
 
             int ENEMY_HP_5PER = (int)((float)EnemySOs[NowStage]._CurrentMaxHP * 5f / 100f);
 
@@ -167,6 +170,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             Text_.text = $"{EnemySOs[NowStage].Name}에게 {ENEMY_HP_5PER}의 출혈 데미지!";
             TextDown();
             StartCoroutine(TextDown_());
+            Texts.Add(Text_.transform);
 
             EnemyHit(EnemySOs[NowStage], ENEMY_HP_5PER);
 
@@ -179,6 +183,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
                 _Text.text = $"{EnemySOs[NowStage].Name}는 출혈 상태이상에서 벗어났다.";
                 TextDown();
                 StartCoroutine(TextDown_());
+                Texts.Add(_Text.transform);
                 isBleeding = false;
             }
         }
@@ -189,6 +194,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             Text.transform.SetParent(BattleContent);
             Text.text = $"{EnemySOs[NowStage].Name}는 기절해 움직이지 못한다.";
             TextDown();
+            Texts.Add(Text.transform);
 
             for (int num = 0; num < PlayerSkills.Count; num++)
             {
@@ -206,6 +212,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             Text.transform.SetParent(BattleContent);
             Text.text = $"{EnemySOs[NowStage].Name}는 실명에 걸려있다.";
             TextDown();
+            Texts.Add(Text.transform);
         }
 
         //적 전투 준비 텍스트 생성
@@ -216,6 +223,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         AttackText.transform.SetParent(BattleContent);
         AttackText.text = EnemySkills[SkillNum].SkillSummary;
         TextDown();
+        Texts.Add(AttackText.transform);
 
         //데미지 기록
         EnemyDamage = 0;
@@ -426,6 +434,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         ActionString.Add("적에게 실명 상태이상을 부여했다.");
         Actions.Add(Null);
         ActionString.Add("적의 공격적중률이 80% 감소했다.");
+        Actions.Add(Null);
         Stat stat = new Stat();
         stat.HIT_RATE = -80;
         EnemySOs[NowStage].AddStats(stat);
@@ -488,7 +497,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         //출혈 20
 
         int Rnum = 0;
-        Rnum = Random.Range(1, 21); //이거 1 101
+        Rnum = Random.Range(1, 101); //이거 1 101
 
         UnityAction Action = Rnum switch
         {
@@ -557,7 +566,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         //팔 절단 10
 
         int Rnum = 0;
-        Rnum = Random.Range(1, 21); //이거 1 101
+        Rnum = Random.Range(1, 101); //이거 1 101
 
         UnityAction Action = Rnum switch
         {
@@ -577,6 +586,9 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         Stat stat = new Stat();
         stat.HIT_RATE = -50;
         EnemySOs[NowStage].AddStats(stat);
+
+        ActionString.Add("적의 손목을 잘라냈다!");
+        Actions.Add(Null);
     }
 
     /// <summary>
@@ -594,6 +606,9 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         stat.CRI_PER = -50;
 
         EnemySOs[NowStage].AddStats(stat);
+
+        ActionString.Add("적의 팔을 잘라냈다!");
+        Actions.Add(Null);
     }
 
     /// <summary>
@@ -640,7 +655,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         //다리절단 10
 
         int Rnum = 0;
-        Rnum = Random.Range(1, 21); //이거 1 101
+        Rnum = Random.Range(1, 101); //이거 1 101
 
         UnityAction Action = Rnum switch
         {
@@ -651,7 +666,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         Action();
     }
 
-    void LegCut()
+    void LegCut() //다리 절단했다고 효과
     {
         if (isLegCut) return;
         
@@ -662,6 +677,9 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         stat.AVOID_PER -= 50;
 
         EnemySOs[NowStage].AddStats(stat);
+
+        ActionString.Add("적의 다리를 잘라냈다!");
+        Actions.Add(Null);
     }
 
     /// <summary>
@@ -681,6 +699,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             AttackText.text = ActionString[num];
             TextDown();
             StartCoroutine(TextDown_());
+            Texts.Add(AttackText.transform);
 
             //이벤트 실행
             Actions[num]();
@@ -711,10 +730,13 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             return;
         }
         
-        ActionString.Add($"{DAMAGE}의 피해를 입었다.");
-        Actions.Add(() => PlayerHit(PSO, DAMAGE));
-        ActionString.Add($"({DecreaseDamage})감소됨 / ({ DefenseDamage})방어함");
-        Actions.Add(Null);
+        for(int num = 0; num < EnemyAttackAmount; num++)
+        {
+            ActionString.Add($"{DAMAGE}의 피해를 입었다.");
+            Actions.Add(() => PlayerHit(PSO, DAMAGE));
+            ActionString.Add($"({DecreaseDamage})감소됨 / ({ DefenseDamage})방어함");
+            Actions.Add(Null);
+        }
     }
 
     /// <summary>
@@ -727,6 +749,31 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         EnemySO.Hit(Damage);
         UpdateHP();
         //만약 적의 hp가 0이면
+        if(EnemySO.IsDie())
+        {
+            StopCoroutine(BattleCalculator());
+            StartCoroutine(EnemyDie());
+        }
+    }
+
+    IEnumerator EnemyDie()
+    {
+        //효과 재생 시간
+        //적이 부르르 떨면서 아래로 내려가면서 희미해지는 효과(2초)
+
+        yield return new WaitForSeconds(2f);
+
+        UIManager.Instance.BattlePannelSetActive(false);
+        TextClear();
+    }
+
+    void TextClear()
+    {
+        for(int num = 0; num < Texts.Count; num++)
+        {
+            Destroy(Texts[num].gameObject);
+        }
+        Texts.Clear();
     }
 
     /// <summary>
@@ -739,11 +786,22 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         PlayerSO.Hit(Damage);
         UpdateHP();
         //만약 플레이어의 hp가 0이면
+        if(PlayerSO.IsDie())
+        {
+            StopCoroutine(BattleCalculator());
+            StartCoroutine(PlayerDie());
+        }
     }
 
-    void GameEnd()
+    IEnumerator PlayerDie()
     {
+        Debug.Log("플레이어 뒤짐");
+        //효과 재생 시간
+        //플레이어가 부르르 떨면서 아래로 내려가면서 희미해지는 효과(2초)
 
+        yield return new WaitForSeconds(2f);
+
+        //게임오버 씬으로 보내주면 될듯?
     }
 
     /// <summary>
