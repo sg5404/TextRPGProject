@@ -66,6 +66,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     //다리 상태이상
     bool isLegCut = false;
 
+    Coroutine _coroutine;
     public void BattleSet(int StageNum)
     {
         NowStage = StageNum;
@@ -142,7 +143,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
 
             if (isPlayerAction) continue;
 
-            StartCoroutine(BattleCalculator());
+            _coroutine = StartCoroutine(BattleCalculator());
             yield return new WaitForSeconds(6f);
         }
     }
@@ -751,7 +752,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         //만약 적의 hp가 0이면
         if(EnemySO.IsDie())
         {
-            StopCoroutine(BattleCalculator());
+            StopCoroutine(_coroutine);
             StartCoroutine(EnemyDie());
         }
     }
@@ -765,6 +766,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
 
         UIManager.Instance.BattlePannelSetActive(false);
         TextClear();
+        UIManager.Instance.RewardPannelSetActive(true);
     }
 
     void TextClear()
