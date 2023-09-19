@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b30d63a8b47d264ca7d63a8a1a59880, type: 3}
-  m_Name: Strength
+  m_Name: Feather
   m_EditorClassIdentifier: 
-  Name: "\uAC15\uC778\uD568"
-  Summary: "\uACF5\uACA9\uB825 +5 <br> \uBC29\uC5B4\uB825 +5"
+  Name: "\uAE43\uD138"
+  Summary: "\uD68C\uD53C\uC728 + 25%"
   StatImage: {fileID: 0}
   HP: 0
-  DMG: 5
-  DEF: 5
+  ATK: 0
+  DEF: 0
   CRI_PER: 0
   CRI_DMG: 0
-  AVOID_PER: 0
+  AVOID_PER: 25
   HIT_RATE: 0

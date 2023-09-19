@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b30d63a8b47d264ca7d63a8a1a59880, type: 3}
+  m_Name: Finisher
+  m_EditorClassIdentifier: 
+  Name: "\uC77C\uACA9\uD544\uC0B4"
+  Summary: "\uACF5\uACA9\uB825 +10 <br> \uCE58\uBA85\uD0C0\uC728 <br>\uCE58\uBA85\uD0C0
+    \uACF5\uACA9\uB825 +20%"
+  StatImage: {fileID: 0}
+  HP: 0
+  ATK: 10
+  DEF: 0
+  CRI_PER: 15
+  CRI_DMG: 20
+  AVOID_PER: 0
+  HIT_RATE: 0
