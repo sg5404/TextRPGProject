@@ -69,6 +69,7 @@ public class StageManager : MonoSingleton<StageManager>
                 EventKinds.None => null,
                 EventKinds.Reward => _Events[0],
                 EventKinds.Battle => _Events[1],
+                EventKinds.Skip => _Events[2],
                 EventKinds.Random => RandomEvents(),
                 _ => _Events[0],
             };

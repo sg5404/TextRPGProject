@@ -21,6 +21,9 @@ MonoBehaviour:
   OptionCount: 1
   Options:
   - OptionText: "\uC2E0\uBE44\uD55C \uD798\uC774 \uBAB8\uC5D0 \uAE43\uB4E0\uB2E4."
-    EventKind: 3
+    EventKind: 2
+    LinkedEvent: {fileID: 0}
   - OptionText: 
     EventKind: 0
+    LinkedEvent: {fileID: 0}
+  isRandomStage: 0
