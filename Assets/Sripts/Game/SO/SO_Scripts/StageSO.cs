@@ -26,6 +26,7 @@ public enum EventKinds
     None,
     Battle,
     Reward,
+    Skip,
     Reward_First,
     Random,
 }

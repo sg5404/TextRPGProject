@@ -20,6 +20,6 @@ MonoBehaviour:
     EventKind: 2
     LinkedEvent: {fileID: 0}
   - OptionText: "\uC9C0\uB098\uCE58\uAE30"
-    EventKind: 0
+    EventKind: 3
     LinkedEvent: {fileID: 0}
   isRandomStage: 0
