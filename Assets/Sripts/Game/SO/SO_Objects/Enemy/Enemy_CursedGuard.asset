@@ -15,15 +15,21 @@ MonoBehaviour:
   Name: "\uC548\uAC1C\uC5D0 \uC7A0\uC2DD\uB41C \uAD50\uB3C4\uAD00"
   Summary: "\uB9E8 \uCC98\uC74C \uC804\uD22C\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uBAAC\uC2A4\uD130"
   MaxHP: 125
+  Image: {fileID: 21300000, guid: 5915e7c3a1f8db646956d0089324933a, type: 3}
   CurrentMaxHP: 125
-  CurrentHP: 105
+  CurrentHP: 125
   ATK: 7
   CurrentATK: 7
   DEF: 0
+  CurrentDEF: 0
   CRI_PER: 0
+  CurrentCRI_PER: 0
   CRI_DMG: 10
+  CurrentCRI_DMG: 10
   AVOID_PER: 0
+  CurrentAVOID_PER: 0
   HIT_RATE: 100
+  CurrentHIT_RATE: 100
   Skills:
   - SkillName: "\uCC0C\uB974\uAE30"
     S_Type: 0

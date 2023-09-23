@@ -8,6 +8,7 @@ public class PlayerSO : ScriptableObject
     public string Name;
     public string Summary;
     [SerializeField] private int MaxHP;
+    public Sprite Image;
     [SerializeField] private int CurrentMaxHP;
     [SerializeField] private int CurrentHP;
     [SerializeField] private int ATK;
