@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: OverPower
   m_EditorClassIdentifier: 
   Name: "\uAD34\uB825"
-  Summary: "\uACF5\uACA9\uB825 +10 <br> \uBC29\uC5B4\uB825 +5"
-  StatImage: {fileID: 0}
+  Summary: "\uACF5\uACA9\uB825 +10"
+  StatImage: {fileID: 21300000, guid: 4d7d9284971c1de4ea9550e1d882c4a6, type: 3}
   HP: 0
   ATK: 10
   DEF: 0

@@ -27,3 +27,4 @@ MonoBehaviour:
   - OptionText: 
     EventKind: 0
     LinkedEvent: {fileID: 0}
+  isRandomStage: 0

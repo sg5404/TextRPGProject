@@ -16,4 +16,4 @@ MonoBehaviour:
   StageSummary: 
   OptionCount: 0
   Options: []
-  isRandomStage: 1
+  isRandomStage: 0

@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Warmonger
   m_EditorClassIdentifier: 
   Name: "\uC804\uC7C1\uAD11"
-  Summary: "\uACF5\uACA9\uB825 +5 <br> \uACF5\uACA9 \uC801\uC911\uB960 +15% <br>
-    \uCE58\uBA85\uD0C0\uC728 + 10% <br>\uCE58\uBA85\uD0C0 \uACF5\uACA9\uB825 +20%
+  Summary: "\uACF5\uACA9\uB825 +8 <br> \uCE58\uBA85\uD0C0 \uACF5\uACA9\uB825 +20%
     <br> \uBC29\uC5B4\uB825 -10"
-  StatImage: {fileID: 0}
+  StatImage: {fileID: 21300000, guid: 980194173603df64195f69866bffbdd7, type: 3}
   HP: 0
-  ATK: 5
-  DEF: 0
-  CRI_PER: 15
-  CRI_DMG: 15
+  ATK: 8
+  DEF: -10
+  CRI_PER: 0
+  CRI_DMG: 20
   AVOID_PER: 0
-  HIT_RATE: 15
+  HIT_RATE: 0

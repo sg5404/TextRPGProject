@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uC0AC\uB0E5\uAFBC\uC758 \uB208"
   Summary: "\uCE58\uBA85\uD0C0\uC728 +15% <br> \uACF5\uACA9 \uC801\uC911\uB960 +15%"
-  StatImage: {fileID: 0}
+  StatImage: {fileID: 21300000, guid: 12b130c6663e8cb4399384276898bcd8, type: 3}
   HP: 0
-  DMG: 0
+  ATK: 0
   DEF: 0
   CRI_PER: 15
   CRI_DMG: 0

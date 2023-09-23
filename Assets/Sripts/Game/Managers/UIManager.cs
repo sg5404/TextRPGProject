@@ -66,11 +66,11 @@ public class UIManager : MonoSingleton<UIManager>
 
         for(int i = 0; i < RewardButtons.Count; i++)
         {
-            int statIndex = Random.Range(0, _stats.Count - 1);
+            int statIndex = Random.Range(0, _stats.Count);
             while(_currentStats.Contains(statIndex))
             {
                if(_currentStats.Count == _stats.Count - 1) break;
-               statIndex = Random.Range(0, _stats.Count - 1);
+               statIndex = Random.Range(0, _stats.Count);
             }                        
             RewardButtons[i]?.GetComponent<RewardButtonSetting>().Setting(_stats[statIndex]);
             _currentStats.Add(statIndex);
