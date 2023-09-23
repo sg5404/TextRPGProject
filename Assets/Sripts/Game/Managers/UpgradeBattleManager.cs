@@ -111,8 +111,13 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             {
                 Player_Skill_Button[num].interactable = true;
                 Player_Skill_Texts[num].text = PSO.Skills[num].SkillName;
-                Player_Skill_Image[num].gameObject.SetActive(true);
-                Player_Skill_Image[num].sprite = PSO.Skills[num].SkillImage;
+                
+                if (PSO.Skills[num].SkillImage != null)
+                {
+                    Player_Skill_Image[num].gameObject.SetActive(true);
+                    Player_Skill_Image[num].sprite = PSO.Skills[num].SkillImage;
+                }
+
 
                 PlayerSkills.Add(PSO.Skills[num]);
             }
