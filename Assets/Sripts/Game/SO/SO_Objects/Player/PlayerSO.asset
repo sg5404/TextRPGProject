@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: "\uCE74\uC640\uC774 \uC815\uD6C8\uC9F1"
   Summary: "\uAC9C\uB9C8\uACE0 \uD559\uC0DD\uC774\uB2E4."
   MaxHP: 100
+  Image: {fileID: 21300000, guid: fb849189d4b57764ea0034151a081c13, type: 3}
   CurrentMaxHP: 100
   CurrentHP: 100
   ATK: 10

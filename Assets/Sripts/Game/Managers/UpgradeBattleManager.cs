@@ -49,6 +49,8 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     [SerializeField] Transform PartBackGroundPannel;
     [SerializeField] private PartKind PART;
 
+    [SerializeField] Image EnemyImage;
+
     private List<Transform> Texts = new List<Transform>();
 
     //머리 상태이상
@@ -70,6 +72,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     public void BattleSet(int StageNum)
     {
         NowStage = StageNum;
+        EnemyImage.sprite = EnemySOs[NowStage].Image;
         //적과 플레이어의 이름 바꿔주기
         PlayerNameText.text = PSO.Name;
         EnemyNameText.text = EnemySOs[NowStage].Name;
@@ -845,6 +848,11 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     void Null()
     {
 
+    }
+
+    public PlayerSO Current_EnemySO()
+    {
+        return EnemySOs[NowStage];
     }
 }
 
