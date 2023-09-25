@@ -1338,8 +1338,16 @@ MonoBehaviour:
   ActNum: 0
   StageNum: 0
   StageList:
+  - {fileID: 11400000, guid: 85cc9f9a9ffd9914686046028cd6d498, type: 2}
+  - {fileID: 11400000, guid: 3aed29f051365d947bdcf918eb8829b7, type: 2}
   - {fileID: 11400000, guid: 82b929409accede4cb820a7f879deadf, type: 2}
   - {fileID: 11400000, guid: 0454875908eb4064d98e08719d3068f2, type: 2}
+  - {fileID: 11400000, guid: 9a5520975e53adc4dbb7aa2ec25c614a, type: 2}
+  - {fileID: 11400000, guid: e8de878b2b758a74fa24dfe93f2f0c01, type: 2}
+  - {fileID: 11400000, guid: 148b3951c2ea2e948838695446dedd5b, type: 2}
+  - {fileID: 11400000, guid: 26016126ea4831f418802f764d9f9be8, type: 2}
+  - {fileID: 11400000, guid: 3287c0666ee610c4aaaaadf7dbb87e13, type: 2}
+  - {fileID: 11400000, guid: 2d62c065db000a14b905d6a58913737e, type: 2}
   _Events:
   - {fileID: 738487626433675035, guid: f14a0a84252543a4baad0f95308dc561, type: 3}
   - {fileID: 522146170132029504, guid: fddfc3da2058b9346b47f4efbce66b00, type: 3}
@@ -1348,7 +1356,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9773f64ad8b61744a856423ce9c26e45, type: 2}
   - {fileID: 11400000, guid: 61b0f391581b0404b9b8d94a6d3b1a98, type: 2}
   - {fileID: 11400000, guid: 24b8094881b4dc74bb25414b2babed76, type: 2}
-  - {fileID: 11400000, guid: e9113db674cb1ec45bc6bbf787b07268, type: 2}
 --- !u!1 &186559058
 GameObject:
   m_ObjectHideFlags: 0
@@ -9126,7 +9133,14 @@ MonoBehaviour:
   BattleContent: {fileID: 841660903}
   PSO: {fileID: 11400000, guid: 607eba04084499540afe1fda1c725761, type: 2}
   EnemySOs:
-  - {fileID: 11400000, guid: fc16c034aa4c643428c92596fb9e7b60, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
+  - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
+  - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
+  - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
+  - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
   - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
   PlayerNameText: {fileID: 1002123301}
   EnemyNameText: {fileID: 41029458}

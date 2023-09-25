@@ -72,6 +72,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     public void BattleSet(int StageNum)
     {
         NowStage = StageNum;
+        EventInit();
         EnemyImage.sprite = EnemySOs[NowStage].Image;
         //적과 플레이어의 이름 바꿔주기
         PlayerNameText.text = PSO.Name;
@@ -83,6 +84,17 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         SetEnemySkills();
         //BattleStart();
         StartCoroutine(BattleStart());
+    }
+
+    void EventInit()
+    {
+        isFaint = false;
+        isBlind = false;
+        isBleeding = false;
+        BleedingTurn = 0;
+        isWristCut = false;
+        isArmCut = false;
+        isLegCut = false;
     }
 
     /// <summary>
