@@ -17,19 +17,19 @@ MonoBehaviour:
   MaxHP: 100
   Image: {fileID: 21300000, guid: fb849189d4b57764ea0034151a081c13, type: 3}
   CurrentMaxHP: 100
-  CurrentHP: 100
+  CurrentHP: 93
   ATK: 10
-  CurrentATK: 25
+  CurrentATK: 20
   DEF: 5
-  CurrentDEF: 5
+  CurrentDEF: 15
   CRI_PER: 25
-  CurrentCRI_PER: 25
+  CurrentCRI_PER: 40
   CRI_DMG: 50
   CurrentCRI_DMG: 50
   AVOID_PER: 5
   CurrentAVOID_PER: 5
   HIT_RATE: 100
-  CurrentHIT_RATE: 100
+  CurrentHIT_RATE: 115
   Skills:
   - SkillName: "\uACF5\uACA9"
     S_Type: 0

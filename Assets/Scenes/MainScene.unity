@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BAS:
     ChangeSceneButton: {fileID: 1446144705}
-    SceneName: GameScene
+    SceneName: TestScene
   BackGroundPannel: {fileID: 1288491162}
 --- !u!4 &1535836373
 Transform:

@@ -708,6 +708,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     /// </summary>
     IEnumerator BattleCalculator()
     {
+        isPlayerAction = true;
         PlayerDamageAdd();
         Debug.Log($"이벤트 갯수 : {Actions.Count}");
         Debug.Log($"텍스트 갯수 : {ActionString.Count}");
@@ -735,9 +736,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
     void PlayerDamageAdd()
     {
         int DAMAGE = EnemyDamage - PSO._CurrentDEF - PlayerShield;
-        Debug.Log(DAMAGE);
         DAMAGE = Mathf.Clamp(DAMAGE, 0, 10000);
-        Debug.Log(DAMAGE);
         int DecreaseDamage = Min(PSO._CurrentDEF, EnemyDamage);
         int DefenseDamage = Min(PlayerShield, EnemyDamage - DecreaseDamage);
 
@@ -758,6 +757,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
             ActionString.Add($"({DecreaseDamage})감소됨 / ({ DefenseDamage})방어함");
             Actions.Add(Null);
         }
+        //여기 고쳐야함
     }
 
     /// <summary>
@@ -773,6 +773,8 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         if(EnemySO.IsDie())
         {
             StopCoroutine(_coroutine);
+            Actions.Clear();
+            ActionString.Clear();
             StartCoroutine(EnemyDie());
         }
     }
