@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: "\uBAA9 \uC5C6\uB294 \uC8C4\uC218"
   Summary: "\uB450\uBC88\uC9F8 \uC804\uD22C\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uBAAC\uC2A4\uD130"
   MaxHP: 175
-  Image: {fileID: 21300000, guid: 880b91d16e4c110488d56f312d93653c, type: 3}
+  Image: {fileID: 21300000, guid: 148e149c506d4d44a9982e5412b10f45, type: 3}
   CurrentMaxHP: 175
   CurrentHP: 175
   ATK: 25
@@ -52,7 +52,7 @@ MonoBehaviour:
     SkillDamagePercent: 150
     SkillAttackAcount: 1
   - SkillName: "\uC6C0\uCE20\uB9AC\uAE30"
-    S_Type: 1
+    S_Type: 0
     SkillImage: {fileID: 0}
     SkillSummary: "\uC801\uC774 \uD328\uB2C9\uC5D0 \uBE60\uC9C4\uB4EF \uBAB8\uC744
       \uC6C0\uCE20\uB9B0\uB2E4."
