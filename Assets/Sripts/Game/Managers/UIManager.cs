@@ -37,8 +37,8 @@ public class UIManager : MonoSingleton<UIManager>
             SelectButtons[i].onClick.AddListener(events[i].EventStart);
         }
 
-        ActProgressBar.fillAmount = (float)StageNum / 12f;
-        ActProgressText.text = $"{StageNum}/12";
+        ActProgressBar.fillAmount = (float)StageNum / 15f;
+        ActProgressText.text = $"{StageNum}/15";
         nowStage = StageNum;
     }
 
