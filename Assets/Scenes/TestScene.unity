@@ -1081,6 +1081,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11580e1df63e7f24792a5b8444f8a96b, type: 2}
   - {fileID: 11400000, guid: 88420fbd5a2a92a41824c51af642dea6, type: 2}
   - {fileID: 11400000, guid: f092ef4cf718be244b3c0ab9cda7549b, type: 2}
+  - {fileID: 11400000, guid: da547527dfe5d514c9bf30bc684c5c85, type: 2}
+  - {fileID: 11400000, guid: 0d861548463a13a4984f1528220c65bd, type: 2}
+  - {fileID: 11400000, guid: e1dd0569303b5f8479ca3c8cf3c605e8, type: 2}
+  - {fileID: 11400000, guid: b415bf266822992449dca357ff5e182d, type: 2}
+  - {fileID: 11400000, guid: ecceaffcbb292d44496d119c4038ce3f, type: 2}
+  - {fileID: 11400000, guid: d44fbd1b7c099e443a51bc295e280d73, type: 2}
   WeaponStats:
   - {fileID: 11400000, guid: 39735fc0098379642a2ded788081ebf7, type: 2}
   - {fileID: 11400000, guid: 253a268ef6e96c046ba0c0ef6a6da74b, type: 2}
@@ -1343,11 +1349,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82b929409accede4cb820a7f879deadf, type: 2}
   - {fileID: 11400000, guid: 0454875908eb4064d98e08719d3068f2, type: 2}
   - {fileID: 11400000, guid: 9a5520975e53adc4dbb7aa2ec25c614a, type: 2}
-  - {fileID: 11400000, guid: e8de878b2b758a74fa24dfe93f2f0c01, type: 2}
+  - {fileID: 11400000, guid: adf99555ed0e2844b88a6f855ce43d61, type: 2}
   - {fileID: 11400000, guid: 148b3951c2ea2e948838695446dedd5b, type: 2}
   - {fileID: 11400000, guid: 26016126ea4831f418802f764d9f9be8, type: 2}
-  - {fileID: 11400000, guid: 3287c0666ee610c4aaaaadf7dbb87e13, type: 2}
-  - {fileID: 11400000, guid: 2d62c065db000a14b905d6a58913737e, type: 2}
+  - {fileID: 11400000, guid: 79915a64e84e9604eb6e4b8959c9fe1d, type: 2}
+  - {fileID: 11400000, guid: 387a92d5842f16a4993c07bd5518bea7, type: 2}
+  - {fileID: 11400000, guid: 3fd4149660b261e49835a182fbf8fae2, type: 2}
+  - {fileID: 11400000, guid: 8c7d8516f4d6f084fb33568344abd510, type: 2}
+  - {fileID: 11400000, guid: e52b765b79c9cdc409c254e8ba15d733, type: 2}
+  - {fileID: 11400000, guid: cfe0429798822ca4995f8738ae9332b1, type: 2}
+  - {fileID: 11400000, guid: b6b1963bfe322f44cb2a82c80caf7b40, type: 2}
   _Events:
   - {fileID: 738487626433675035, guid: f14a0a84252543a4baad0f95308dc561, type: 3}
   - {fileID: 522146170132029504, guid: fddfc3da2058b9346b47f4efbce66b00, type: 3}
@@ -9138,10 +9149,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
   - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
   - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
   - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
   - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
   - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
-  - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: 3aa190e4d1cac7d4cbd41fd46f0a0f40, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
+  - {fileID: 11400000, guid: 3f032642404f0534ca7ca96e64d72aa4, type: 2}
   PlayerNameText: {fileID: 1002123301}
   EnemyNameText: {fileID: 41029458}
   Player_HP: {fileID: 1235486000}
