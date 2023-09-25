@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uC7BF\uBE5B\uC11C\uB9B0 \uCE74\uD0C0\uB098"
   Summary: "\uACF5\uACA9\uB825 +8 <br> \uACF5\uACA9 \uC801\uC911\uB960 +25%"
-  StatImage: {fileID: 0}
+  StatImage: {fileID: 21300000, guid: 100ae678d7f01db4b8566c3d718cc6a7, type: 3}
   HP: 0
   ATK: 8
   DEF: 0
