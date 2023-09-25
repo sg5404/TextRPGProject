@@ -31,9 +31,28 @@ MonoBehaviour:
   HIT_RATE: 100
   CurrentHIT_RATE: 100
   Skills:
-  - SkillName: 
+  - SkillName: "\uC5F0\uC18D \uC0AC\uACA9"
     S_Type: 0
     SkillImage: {fileID: 0}
-    SkillSummary: 
-    SkillDamagePercent: 0
-    SkillAttackAcount: 0
+    SkillSummary: "\uC801\uC774 \uD654\uC0B4\uC744 \uC5EC\uB7EC\uAC1C \uAEBC\uB0B4\uB4E4\uC5C8\uB2E4."
+    SkillDamagePercent: 50
+    SkillAttackAcount: 2
+  - SkillName: "\uBE44\uC7A5\uC758 \uD55C\uBC1C"
+    S_Type: 0
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uB098\uB97C \uD5A5\uD574 \uAC15\uD558\uAC8C \uD65C
+      \uC2DC\uC704\uB97C \uB2F9\uAE30\uACE0 \uC788\uB2E4. "
+    SkillDamagePercent: 250
+    SkillAttackAcount: 1
+  - SkillName: "\uAC70\uB9AC \uBC8C\uB9AC\uAE30"
+    S_Type: 0
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uD65C\uC744 \uC3D8\uBA70 \uB098\uC640 \uBA40\uC5B4\uC9C4\uB2E4."
+    SkillDamagePercent: 150
+    SkillAttackAcount: 1
+  - SkillName: "\uB09C\uC0AC"
+    S_Type: 0
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uD65C\uC744 \uB9C8\uAD6C\uC7A1\uC774\uB85C \uB09C\uC0AC\uD55C\uB2E4."
+    SkillDamagePercent: 30
+    SkillAttackAcount: 5

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf9a69555ee1a643b333b1b5f256813, type: 3}
   m_Name: PlayerSO
   m_EditorClassIdentifier: 
-  Name: "\uCE74\uC640\uC774 \uC815\uD6C8\uC9F1"
+  Name: "\uD0C8\uC625\uD55C \uC8C4\uC218"
   Summary: "\uAC9C\uB9C8\uACE0 \uD559\uC0DD\uC774\uB2E4."
   MaxHP: 100
   Image: {fileID: 21300000, guid: fb849189d4b57764ea0034151a081c13, type: 3}
   CurrentMaxHP: 100
   CurrentHP: 100
   ATK: 10
-  CurrentATK: 10
+  CurrentATK: 25
   DEF: 5
   CurrentDEF: 5
   CRI_PER: 25
