@@ -21,6 +21,8 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private List<StatSO> WeaponStats;
     [SerializeField] private bool isFirstReward = true;
 
+    [SerializeField] private TextMeshProUGUI HP_TEXT;
+
     private List<StatSO> CurrentStats = new List<StatSO>();
     private List<StatSO> CurrentWeaponStats = new List<StatSO>();
 
@@ -50,6 +52,7 @@ public class UIManager : MonoSingleton<UIManager>
         if(!isActive) return;
         if(isFirstReward) SetRewardButton(WeaponStats, ref CurrentWeaponStats, UsedWeaponStats);
         else SetRewardButton(Stats, ref CurrentStats, UsedStats);
+        HP_TEXT.text = $"{playerSO._CurrentHP} / {playerSO._CurrentMaxHP}";
     }
 
     public void BattlePannelSetActive(bool isActive)
@@ -57,6 +60,7 @@ public class UIManager : MonoSingleton<UIManager>
         BackgroundPannel.gameObject.SetActive(isActive);
         BattlePannel.gameObject.SetActive(isActive);
         UpgradeBattleManager.Instance.BattleSet(nowStage - 1);
+        HP_TEXT.text = $"{playerSO._CurrentHP/playerSO._CurrentMaxHP}";
     }
 
     public void SetRewardButton(List<StatSO> _stats, ref List<StatSO> _currentStats, List<StatSO> _usedStats)

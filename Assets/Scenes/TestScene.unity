@@ -1093,6 +1093,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 788fbaa70f5ed444bb0ded1bb05696a1, type: 2}
   - {fileID: 11400000, guid: b13aed0067b0ae947be2b6a50c100847, type: 2}
   isFirstReward: 1
+  HP_TEXT: {fileID: 944960613}
 --- !u!4 &130605137
 Transform:
   m_ObjectHideFlags: 0
