@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105f88a10ab701e43b3f0e72d2b45c1a, type: 3}
   m_Name: Act1_9
   m_EditorClassIdentifier: 
-  StageSprite: {fileID: 21300000, guid: f9c5b711de3ce41429077ad7e9394b0f, type: 3}
+  StageSprite: {fileID: 21300000, guid: 23ed3748a8af2284e8549a3bf3b50dd3, type: 3}
   StageSummary: "<\uC9C0\uD558 \uAC10\uC625>\r\n\n\uC717 \uCE35\uC73C\uB85C \uD5A5\uD560
     \uC218\uB85D \uC8FC\uBCC0\uC5D0 \uC790\uC90F\uBE5B \uC548\uAC1C\uAC00 \n\uC9D9\uC5B4\uC9C0\uB294
     \uAC83\uC744 \uB290\uAF08\uB2E4.\n\uC54C\uC218\uC5C6\uB294 \uCFF5\uCFF5\uC18C\uB9AC
