@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105f88a10ab701e43b3f0e72d2b45c1a, type: 3}
+  m_Name: Act1_11
+  m_EditorClassIdentifier: 
+  StageSprite: {fileID: 21300000, guid: f9c5b711de3ce41429077ad7e9394b0f, type: 3}
+  StageSummary: "<\uC9C0\uD558 \uAC10\uC625>\r\n\n\uB2F9\uC2E0\uC740 \uCC3D\uC0B4
+    \uC0AC\uC774\uB85C \uD55C \uAC70\uB300\uD55C \uC8C4\uC218\uAC00 \uAC78\uC5B4
+    \uB098\uC624\uB294 \uAC83\uC744 \uBCF4\uC558\uB2E4.\n\uBB34\uC5B8\uAC00 \uC774\uC0C1\uD558\uB2E4.
+    \uADF8\uB294, \uBAA9\uC774 \uC5C6\uC5C8\uB2E4. \uCC22\uACA8\uB098\uAC04\uB4EF\uD55C
+    \uAC70\uCE5C \uC808\uB2E8\uBA74\uC5D0\uC120 \uC9C4\uD64D\uBE5B \uD53C\uAC00\n\uD758\uB7EC\uB098\uC624\uACE0
+    \uC788\uC5C8\uB2E4.\n\uBCF5\uB3C4\uB97C \uAC78\uC5B4\uAC00\uB358 \uC8C4\uC218\uB294,
+    \uB2F9\uC2E0\uC774 \uC228\uC740 \uBC29 \uC55E\uC5D0 \uBA48\uCDB0\uC130\uB2E4."
+  OptionCount: 1
+  Options:
+  - OptionText: "\uC228\uC744 \uC8FD\uC774\uBA70 \uC9C0\uB098\uAC00\uAE38 \uAE30\uB2E4\uB9B0\uB2E4."
+    EventKind: 3
+    LinkedEvent: {fileID: 0}
+  - OptionText: 
+    EventKind: 0
+    LinkedEvent: {fileID: 0}
+  isRandomStage: 0
