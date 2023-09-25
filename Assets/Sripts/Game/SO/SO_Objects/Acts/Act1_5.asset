@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 105f88a10ab701e43b3f0e72d2b45c1a, type: 3}
-  m_Name: RandomAct1_4
+  m_Name: Act1_5
   m_EditorClassIdentifier: 
   StageSprite: {fileID: 21300000, guid: 3f01bbabb95c4984fba2f9d9cf440d92, type: 3}
-  StageSummary: "<\uC9C0\uD558 \uAC10\uC625>\r\n\r\n\uB79C\uB364 4"
-  OptionCount: 2
+  StageSummary: 
+  OptionCount: 1
   Options:
-  - OptionText: "\uC790\uC138\uD788 \uC0B4\uD3B4\uBCF4\uAE30"
-    EventKind: 2
-    LinkedEvent: {fileID: 0}
-  - OptionText: "\uC9C0\uB098\uCE58\uAE30"
+  - OptionText: 
     EventKind: 3
     LinkedEvent: {fileID: 0}
-  isRandomStage: 0
+  - OptionText: 
+    EventKind: 0
+    LinkedEvent: {fileID: 0}
+  isRandomStage: 1

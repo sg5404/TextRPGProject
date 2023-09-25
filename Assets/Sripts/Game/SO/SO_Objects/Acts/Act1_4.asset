@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageSprite: {fileID: 21300000, guid: 3f01bbabb95c4984fba2f9d9cf440d92, type: 3}
   StageSummary: 
-  OptionCount: 0
-  Options: []
-  isRandomStage: 0
+  OptionCount: 1
+  Options:
+  - OptionText: 
+    EventKind: 3
+    LinkedEvent: {fileID: 0}
+  - OptionText: 
+    EventKind: 0
+    LinkedEvent: {fileID: 0}
+  isRandomStage: 1

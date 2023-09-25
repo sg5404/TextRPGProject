@@ -19,11 +19,11 @@ MonoBehaviour:
   CurrentMaxHP: 100
   CurrentHP: 100
   ATK: 10
-  CurrentATK: 18
+  CurrentATK: 10
   DEF: 5
   CurrentDEF: 5
   CRI_PER: 25
-  CurrentCRI_PER: 55
+  CurrentCRI_PER: 25
   CRI_DMG: 50
   CurrentCRI_DMG: 50
   AVOID_PER: 5
@@ -43,7 +43,7 @@ MonoBehaviour:
     SkillImage: {fileID: 21300000, guid: 8cd3116ba307a5b4ba895262e2b0e504, type: 3}
     SkillSummary: "\uBC29\uD328\uB97C \uB4E4\uACE0 \uC0C1\uB300\uC758 \uACF5\uACA9\uC744
       \uC218\uBE44\uD55C\uB2E4."
-    SkillDamagePercent: 100
+    SkillDamagePercent: 200
     SkillAttackAcount: 1
   - SkillName: 
     S_Type: 0

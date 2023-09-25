@@ -1107,6 +1107,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0454875908eb4064d98e08719d3068f2, type: 2}
   - {fileID: 11400000, guid: 9a5520975e53adc4dbb7aa2ec25c614a, type: 2}
   - {fileID: 11400000, guid: e8de878b2b758a74fa24dfe93f2f0c01, type: 2}
+  - {fileID: 11400000, guid: 148b3951c2ea2e948838695446dedd5b, type: 2}
+  - {fileID: 11400000, guid: 26016126ea4831f418802f764d9f9be8, type: 2}
+  - {fileID: 11400000, guid: 3287c0666ee610c4aaaaadf7dbb87e13, type: 2}
+  - {fileID: 11400000, guid: 2d62c065db000a14b905d6a58913737e, type: 2}
   _Events:
   - {fileID: 738487626433675035, guid: f14a0a84252543a4baad0f95308dc561, type: 3}
   - {fileID: 522146170132029504, guid: fddfc3da2058b9346b47f4efbce66b00, type: 3}
@@ -1389,7 +1393,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 111.738525}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1920,7 +1924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -990}
+  m_AnchoredPosition: {x: 0, y: -1080}
   m_SizeDelta: {x: 1100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &358035847
@@ -2906,7 +2910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &464995915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3741,7 +3745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 171}
+  m_AnchoredPosition: {x: 0, y: 123}
   m_SizeDelta: {x: 1200, y: 800}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &611779265
@@ -3757,14 +3761,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3f01bbabb95c4984fba2f9d9cf440d92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d27b0b7877419f469eb1e95328877a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7509,7 +7513,15 @@ MonoBehaviour:
   PSO: {fileID: 11400000, guid: 607eba04084499540afe1fda1c725761, type: 2}
   EnemySOs:
   - {fileID: 11400000, guid: fc16c034aa4c643428c92596fb9e7b60, type: 2}
+  - {fileID: 11400000, guid: fc16c034aa4c643428c92596fb9e7b60, type: 2}
+  - {fileID: 11400000, guid: fc16c034aa4c643428c92596fb9e7b60, type: 2}
   - {fileID: 11400000, guid: bf719b10ccbd2e14ca209016401a87b4, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
+  - {fileID: 11400000, guid: d2eb30f0144eb394b8898e2d3da5d86d, type: 2}
+  - {fileID: 11400000, guid: 3aa190e4d1cac7d4cbd41fd46f0a0f40, type: 2}
   PlayerNameText: {fileID: 1002123301}
   EnemyNameText: {fileID: 41029458}
   Player_HP: {fileID: 1235486000}
@@ -7537,6 +7549,7 @@ MonoBehaviour:
   PartAttackPannel: {fileID: 2023006304}
   PartBackGroundPannel: {fileID: 1541474045}
   PART: 2
+  EnemyImage: {fileID: 1013055830}
 --- !u!1 &1272772663
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,7 +9626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -770}
+  m_AnchoredPosition: {x: 0, y: -860}
   m_SizeDelta: {x: 1100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653550591

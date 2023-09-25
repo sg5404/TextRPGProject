@@ -15,9 +15,19 @@ MonoBehaviour:
   Name: "\uBAA9 \uC5C6\uB294 \uC8C4\uC218"
   Summary: "\uB450\uBC88\uC9F8 \uC804\uD22C\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uBAAC\uC2A4\uD130"
   MaxHP: 175
-  CurrentHP: 175
+  Image: {fileID: 21300000, guid: 880b91d16e4c110488d56f312d93653c, type: 3}
+  CurrentMaxHP: 175
+  CurrentHP: 167
+  ATK: 25
+  CurrentATK: 25
   DEF: 5
+  CurrentDEF: 5
   CRI_PER: 0
+  CurrentCRI_PER: 0
   CRI_DMG: 25
+  CurrentCRI_DMG: 25
   AVOID_PER: 0
+  CurrentAVOID_PER: 0
   HIT_RATE: 85
+  CurrentHIT_RATE: 85
+  Skills: []

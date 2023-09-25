@@ -18,8 +18,8 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 5915e7c3a1f8db646956d0089324933a, type: 3}
   CurrentMaxHP: 125
   CurrentHP: 125
-  ATK: 7
-  CurrentATK: 7
+  ATK: 15
+  CurrentATK: 15
   DEF: 0
   CurrentDEF: 0
   CRI_PER: 0

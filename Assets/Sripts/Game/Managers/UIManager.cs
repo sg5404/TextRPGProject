@@ -14,15 +14,18 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private Transform BackgroundPannel;
 
     [SerializeField] private List<Button> SelectButtons;
-
     [SerializeField] private List<Button> RewardButtons;
 
     [SerializeField] private PlayerSO playerSO;
     [SerializeField] private List<StatSO> Stats;
     [SerializeField] private List<StatSO> WeaponStats;
     [SerializeField] private bool isFirstReward = true;
-    private List<int> CurrentStats = new List<int>();
-    private List<int> CurrentWeaponStats = new List<int>();
+
+    private List<StatSO> CurrentStats = new List<StatSO>();
+    private List<StatSO> CurrentWeaponStats = new List<StatSO>();
+
+    private List<StatSO> UsedStats = new List<StatSO>();
+    private List<StatSO> UsedWeaponStats = new List<StatSO>();
 
     private int nowStage = 0;
 
@@ -45,8 +48,8 @@ public class UIManager : MonoSingleton<UIManager>
         RewardPannel.gameObject.SetActive(isActive);    
 
         if(!isActive) return;
-        if(isFirstReward) SetRewardButton(WeaponStats, CurrentWeaponStats);
-        else SetRewardButton(Stats, CurrentStats);
+        if(isFirstReward) SetRewardButton(WeaponStats, ref CurrentWeaponStats, UsedWeaponStats);
+        else SetRewardButton(Stats, ref CurrentStats, UsedStats);
     }
 
     public void BattlePannelSetActive(bool isActive)
@@ -56,9 +59,9 @@ public class UIManager : MonoSingleton<UIManager>
         UpgradeBattleManager.Instance.BattleSet(nowStage - 1);
     }
 
-    public void SetRewardButton(List<StatSO> _stats, List<int> _currentStats)
+    public void SetRewardButton(List<StatSO> _stats, ref List<StatSO> _currentStats, List<StatSO> _usedStats)
     {
-        if(_currentStats.Count >= _stats.Count - 3) 
+        if(_usedStats.Count >= _stats.Count - 3) 
         {
             Debug.LogError("더 이상 스탯 설정 불가");
             return;
@@ -67,15 +70,14 @@ public class UIManager : MonoSingleton<UIManager>
         for(int i = 0; i < RewardButtons.Count; i++)
         {
             int statIndex = Random.Range(0, _stats.Count);
-            while(_currentStats.Contains(statIndex))
+            while(_usedStats.Contains(_stats[statIndex]) || _currentStats.Contains(_stats[statIndex]))
             {
-               if(_currentStats.Count == _stats.Count - 1) break;
+               if(_usedStats.Count >= _stats.Count - 1) break;
                statIndex = Random.Range(0, _stats.Count);
-            }                        
+            }
+            _currentStats.Add(_stats[statIndex]);
             RewardButtons[i]?.GetComponent<RewardButtonSetting>().Setting(_stats[statIndex]);
-            _currentStats.Add(statIndex);
         }
-        isFirstReward = false;
     }
 
     public void RewardButtonClick(int num)
@@ -85,6 +87,14 @@ public class UIManager : MonoSingleton<UIManager>
         Debug.Log(num);
         RewardPannelSetActive(false);
         playerSO.AddStats(RewardButtons[num]?.GetComponent<RewardButtonSetting>().RewardStat);
+        if(!isFirstReward)
+        {
+            Debug.Log(CurrentStats.Count);
+            Debug.Log(CurrentStats[1]);
+            Debug.Log(CurrentStats[2]);
+            UsedStats.Add(CurrentStats[num]);
+            CurrentStats.Clear();
+        }
         //다음스테이지로 넘어가기
         StageManager.Instance.NextStage();
         FirstReward();

@@ -35,12 +35,12 @@ public class StageManager : MonoSingleton<StageManager>
         }
         else
         {
-            int index = Random.Range(0, RandomStages.Count - 1);
+            int index = Random.Range(0, RandomStages.Count);
             while(usedRandomStages.Contains(RandomStages[index]))
             {
-                Debug.Log("while");
-               if(usedRandomStages.Count == RandomStages.Count - 1) break;
-               index = Random.Range(0, RandomStages.Count - 1);
+               Debug.Log("while");
+               if(usedRandomStages.Count >= RandomStages.Count - 1) break;
+               index = Random.Range(0, RandomStages.Count);
             }
             usedRandomStages.Add(RandomStages[index]);     
             var randomStage = RandomStages[index];
