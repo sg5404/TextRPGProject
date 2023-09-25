@@ -98,6 +98,7 @@ public class UIManager : MonoSingleton<UIManager>
         }
         //다음스테이지로 넘어가기
         StageManager.Instance.NextStage();
+        HP_TEXT.text = $"{playerSO._CurrentHP} / {playerSO._CurrentMaxHP}";
         FirstReward();
     }
 
