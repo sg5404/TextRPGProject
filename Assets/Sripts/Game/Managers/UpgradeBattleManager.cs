@@ -773,6 +773,8 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         if(EnemySO.IsDie())
         {
             StopCoroutine(_coroutine);
+            Actions.Clear();
+            ActionString.Clear();
             StartCoroutine(EnemyDie());
         }
     }
