@@ -63,7 +63,7 @@ public class UIManager : MonoSingleton<UIManager>
     {
         if(_usedStats.Count >= _stats.Count - 3) 
         {
-            Debug.LogError("더 이상 스탯 설정 불가");
+            Debug.LogError("더 이상 스탯 설정 불가, 스탯 추가 필요");
             return;
         }
 
@@ -87,11 +87,8 @@ public class UIManager : MonoSingleton<UIManager>
         Debug.Log(num);
         RewardPannelSetActive(false);
         playerSO.AddStats(RewardButtons[num]?.GetComponent<RewardButtonSetting>().RewardStat);
-        if(!isFirstReward)
+        if(!isFirstReward && CurrentStats.Count > 2)
         {
-            Debug.Log(CurrentStats.Count);
-            Debug.Log(CurrentStats[1]);
-            Debug.Log(CurrentStats[2]);
             UsedStats.Add(CurrentStats[num]);
             CurrentStats.Clear();
         }

@@ -17,7 +17,7 @@ MonoBehaviour:
   MaxHP: 175
   Image: {fileID: 21300000, guid: 880b91d16e4c110488d56f312d93653c, type: 3}
   CurrentMaxHP: 175
-  CurrentHP: 167
+  CurrentHP: 175
   ATK: 25
   CurrentATK: 25
   DEF: 5
@@ -30,4 +30,31 @@ MonoBehaviour:
   CurrentAVOID_PER: 0
   HIT_RATE: 85
   CurrentHIT_RATE: 85
-  Skills: []
+  Skills:
+  - SkillName: "\uB0B4\uB824\uCE58\uAE30"
+    S_Type: 0
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uBB34\uAE30\uB97C \uC591\uC190\uC73C\uB85C \uC950\uACE0
+      \uC788\uB294 \uD798\uAECF \uD798\uC744 \uBAA8\uC73C\uACE0 \uC788\uB2E4. "
+    SkillDamagePercent: 200
+    SkillAttackAcount: 1
+  - SkillName: "\uB09C\uB3C4\uC9C8"
+    S_Type: 0
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uBB34\uAE30\uB97C \uB9C8\uAD6C \uD718\uB450\uB974\uBA70
+      \uB2E4\uAC00\uC628\uB2E4."
+    SkillDamagePercent: 50
+    SkillAttackAcount: 3
+  - SkillName: "\uBC14\uB514 \uC2AC"
+    S_Type: 0
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uBB34\uC11C\uC6B4 \uAE30\uC138\uB85C \uB3CC\uC9C4\uD574\uC628\uB2E4."
+    SkillDamagePercent: 150
+    SkillAttackAcount: 1
+  - SkillName: "\uD328\uB2C9"
+    S_Type: 1
+    SkillImage: {fileID: 0}
+    SkillSummary: "\uC801\uC774 \uD328\uB2C9\uC5D0 \uBE60\uC9C4\uB4EF \uBAB8\uC744
+      \uC6C0\uCE20\uB9B0\uB2E4."
+    SkillDamagePercent: 100
+    SkillAttackAcount: 1

@@ -21,7 +21,7 @@ MonoBehaviour:
   OptionCount: 2
   Options:
   - OptionText: "\uB2E4\uAC00\uAC04\uB2E4."
-    EventKind: 2
+    EventKind: 5
     LinkedEvent: {fileID: 0}
   - OptionText: "\uBB34\uC2DC\uD558\uACE0 \uC9C0\uB098\uAC04\uB2E4."
     EventKind: 3

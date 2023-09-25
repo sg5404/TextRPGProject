@@ -86,7 +86,6 @@ public class StageManager : MonoSingleton<StageManager>
     {
         int index = Random.Range(0,2);
 
-
         if(_Events[index] == null)
         {
             Debug.LogError("Event not Available");

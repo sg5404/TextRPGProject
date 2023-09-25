@@ -18,7 +18,7 @@ MonoBehaviour:
   StatImage: {fileID: 21300000, guid: 980194173603df64195f69866bffbdd7, type: 3}
   HP: 0
   ATK: 8
-  DEF: -10
+  DEF: -3
   CRI_PER: 0
   CRI_DMG: 20
   AVOID_PER: 0

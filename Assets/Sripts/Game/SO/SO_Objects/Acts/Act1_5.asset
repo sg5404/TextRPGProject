@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105f88a10ab701e43b3f0e72d2b45c1a, type: 3}
   m_Name: Act1_5
   m_EditorClassIdentifier: 
-  StageSprite: {fileID: 21300000, guid: 3f01bbabb95c4984fba2f9d9cf440d92, type: 3}
-  StageSummary: 
+  StageSprite: {fileID: 21300000, guid: 3d27b0b7877419f469eb1e95328877a4, type: 3}
+  StageSummary: "<\uC9C0\uD558 \uAC10\uC625>\r\n\n\uB2F9\uC2E0\uC758 \uB9C8\uC9C0\uB9C9
+    \uACF5\uACA9\uC73C\uB85C \uC801\uC740 \uAE30\uC774\uD55C \uC18C\uB9AC\uB97C \uB0B4\uBA70
+    \uC4F0\uB7EC\uC84C\uB2E4.\n\uC774\uC9C8\uAC10\uC774 \uB290\uAEF4\uC9C0\uB294
+    \uBD84\uC704\uAE30\uC758 \uAC10\uC625\uC5D0\uC11C \uB2F9\uC2E0\uC740\n\uD0C8\uCD9C\uD574\uC57C\uACA0\uB2E4\uB294
+    \uC0DD\uAC01 \uBFD0\uC774\uC5C8\uB2E4.\n"
   OptionCount: 1
   Options:
-  - OptionText: 
+  - OptionText: "\uBCF5\uB3C4\uB97C \uD5A5\uD574 \uAC78\uC5B4\uAC04\uB2E4"
     EventKind: 3
     LinkedEvent: {fileID: 0}
   - OptionText: 
     EventKind: 0
     LinkedEvent: {fileID: 0}
-  isRandomStage: 1
+  isRandomStage: 0
