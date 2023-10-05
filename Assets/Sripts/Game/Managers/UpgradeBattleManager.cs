@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
 {
@@ -826,6 +827,7 @@ public class UpgradeBattleManager : MonoSingleton<UpgradeBattleManager>
         yield return new WaitForSeconds(2f);
 
         //게임오버 씬으로 보내주면 될듯?
+        SceneManager.LoadScene("GameOverScene");
     }
 
     /// <summary>
